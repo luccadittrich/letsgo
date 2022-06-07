@@ -1,1 +1,4 @@
-<h1><%= @event.name %></h1>
+<div class="container">
+  <h1><%= @event.name %></h1>
+  <%= link_to "editar", edit_event_path, class: "btn btn-warning" %>
+</div>
