@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_180433) do
   end
 
   create_table "check_ins", force: :cascade do |t|
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
