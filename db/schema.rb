@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_132918) do
+ActiveRecord::Schema.define(version: 2022_06_07_171139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "check_ins", force: :cascade do |t|
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2022_06_07_132918) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_feeds_on_event_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -73,6 +82,8 @@ ActiveRecord::Schema.define(version: 2022_06_07_132918) do
   add_foreign_key "check_ins", "users"
   add_foreign_key "events", "users"
   add_foreign_key "feeds", "events"
+  add_foreign_key "follows", "users"
+  add_foreign_key "follows", "users", column: "followed_id"
   add_foreign_key "posts", "feeds"
   add_foreign_key "posts", "users"
 end
