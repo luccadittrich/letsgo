@@ -1,0 +1,12 @@
+  <%= simple_form_for @event do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :date %>
+  <%= f.input :local %>
+  <%= f.input :category %> <%#collection: Item::CATEGORIES %>
+  <%= f.input :photo, as: :file %>
+  <%= f.label "Evento privado?" %>
+  <%= f.check_box :private %>
+  <%= f.label "sim" %>
+  <%= f.button :submit, class: 'btn btn-primary w-100' %>
+<% end %>
