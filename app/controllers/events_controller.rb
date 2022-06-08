@@ -36,6 +36,26 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def update
+    @event = Event.new(event_params)
+
+    if @event.update(event_params)
+      redirect_to @event, notice: "#{@event.name} foi editado."
+      @event.save
+    else
+      render :edit
+    end
+  end
+
+  #   @event = Event.find(params[:id])
+  #   @event.update([:id])
+  #   if @event.update
+  #     redirect_to @event, notice: "O item #{@event.name} foi editado."
+  #   else
+  #     render :edit
+  #   end
+  # end
+
   private
 
   def event_params
