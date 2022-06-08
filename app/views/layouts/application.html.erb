@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -13,9 +13,16 @@
   </head>
 
   <body>
-    <%= render 'shared/flashes' %>
-    <%# <div class= "container p-3 m-3"> %>
+    <% if current_user.present? %>
+      <%= render 'shared/sidebar' %>
+      <%= render 'shared/feed_header' %>
+        <%= yield %>
+      </div>
+      <%= render 'shared/widgets' %>
+      <%= render 'shared/flashes' %>
+    <% else %>
       <%= yield %>
-    <div>
+      <%= render 'shared/flashes' %>
+    <% end %>
   </body>
 </html>
