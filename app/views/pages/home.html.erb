@@ -5,14 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Go!</title>
-    <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
   </head>
   <body>
     <!-- sidebar -->
@@ -51,10 +44,7 @@
       <div class="sidebarOption">
          <div class="profile-info">
             <div class="post__avatar">
-              <img
-                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-                alt=""
-              />
+              <%= cl_image_tag current_user.photo.key %>
             </div>
           <div>
             <p class="name">Djez</p>
@@ -78,10 +68,7 @@
       <div class="tweetBox">
         <form>
           <div class="tweetbox__input">
-            <img
-              src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-              alt=""
-            />
+            <%= cl_image_tag current_user.photo.key %>
             <input class="ps-3 text-holder" type="text" placeholder="O que você está fazendo?" />
           </div>
           <button class="tweetBox__tweetButton">POSTAR</button>
