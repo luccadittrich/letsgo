@@ -1,3 +1,4 @@
+    <div class= "container p-3 m-3">
 <div class ="devise-page">
 <main class="flex align-items-center justify-content-center">
   <section id="mobile" class="flex">
@@ -21,10 +22,10 @@
                           required: false,
                           label: false,
                           input_html: { autocomplete: "current-password" },
-                          placeholder: "Senha*" %> 
-              <div class="d-inline-flex checkbox px-4 inline">  
-                <div>                
-                  <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>  
+                          placeholder: "Senha*" %>
+              <div class="d-inline-flex checkbox px-4 inline">
+                <div>
+                  <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>
                 </div>
                 <div class="px-1">
                   <%= "Remember me"%>
@@ -32,7 +33,7 @@
               </div>
               <%= f.button :submit, "Log in", class: "button" %>
             </div>
-          <% end %> 
+          <% end %>
           </div>
           <div class="flex separator align-items-center">
               <span></span>
@@ -43,7 +44,8 @@
               <div class="flex justify-content-center">
                   <%= "Não tem uma conta? " %>
                   <%= link_to "Cadastre-se", new_user_registration_path %>
-              </div>              
+              </div>
           </div>
   </main>
+</div>
 </div>
