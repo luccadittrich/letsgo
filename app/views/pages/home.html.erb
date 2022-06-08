@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,39 +11,39 @@
     <!-- sidebar -->
     <div class="sidebar">
       <i class="fab fa-gofore"></i>
-      <div class="sidebarOption active">
+      <div class="sidebar-option active">
         <span class="material-icons"> home </span>
         <h2>Home</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
         <span class="material-icons"> search </span>
         <h2>Eventos</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
         <span class="material-icons"> notifications_none </span>
         <h2>Notificações</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
         <span class="material-icons"> mail_outline </span>
         <h2>Mensagens</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
         <span class="material-icons"> perm_identity </span>
         <h2>Perfil</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
         <span class="material-icons"> add_circle_outline </span>
         <h2>Criar Evento</h2>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebar-option">
          <div class="profile-info">
-            <div class="post__avatar">
+            <div class="post-avatar">
               <%= cl_image_tag current_user.photo.key %>
             </div>
           <div>
@@ -60,42 +60,42 @@
 
     <!-- feed -->
     <div class="feed">
-      <div class="feed__header">
+      <div class="feed-header">
         <h2 id="home-h2">Home</h2>
       </div>
 
       <!-- publishbox  -->
-      <div class="tweetBox">
+      <div class="publish-box">
         <form>
-          <div class="tweetbox__input">
+          <div class="publish-box-input">
             <%= cl_image_tag current_user.photo.key %>
             <input class="ps-3 text-holder" type="text" placeholder="O que você está fazendo?" />
           </div>
-          <button class="tweetBox__tweetButton">POSTAR</button>
+          <button class="publish-box-publish-button">POSTAR</button>
         </form>
       </div>
 
 
       <!-- post 1 -->
       <div class="post">
-        <div class="post__avatar">
+        <div class="post-avatar">
           <img
             src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
             alt=""
           />
         </div>
 
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
+        <div class="post-body">
+          <div class="post-header">
+            <div class="post-header-text">
               <h3>
                 Djez
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@djez</span
+                <span class="post-header-special"
+                  ><span class="material-icons post-badge"> verified </span>@djez</span
                 >
               </h3>
             </div>
-            <div class="post__headerDescription">
+            <div class="post-header-description">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
@@ -109,24 +109,24 @@
 
       <!-- post 2 -->
       <div class="post">
-        <div class="post__avatar">
+        <div class="post-avatar">
           <img
             src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
             alt=""
           />
         </div>
 
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
+        <div class="post-body">
+          <div class="post-header">
+            <div class="post-header-text">
               <h3>
                 Gabriel
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@gabrielo</span
+                <span class="post-header-special"
+                  ><span class="material-icons post-badge"> verified </span>@gabrielo</span
                 >
               </h3>
             </div>
-            <div class="post__headerDescription">
+            <div class="post-header-description">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
@@ -139,24 +139,24 @@
       </div>
       <!-- post 3 -->
       <div class="post">
-        <div class="post__avatar">
+        <div class="post-avatar">
           <img
             src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
             alt=""
           />
         </div>
 
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
+        <div class="post-body">
+          <div class="post-header">
+            <div class="post-header-text">
               <h3>
                 Ícaro
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@icaroleon</span
+                <span class="post-header-special"
+                  ><span class="material-icons post-badge"> verified </span>@icaroleon</span
                 >
               </h3>
             </div>
-            <div class="post__headerDescription">
+            <div class="post-header-description">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
@@ -170,24 +170,24 @@
 
       <!-- post 2 -->
       <div class="post">
-        <div class="post__avatar">
+        <div class="post-avatar">
           <img
             src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
             alt=""
           />
         </div>
 
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
+        <div class="post-body">
+          <div class="post-header">
+            <div class="post-header-text">
               <h3>
                 Gabriel
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@gabrielo</span
+                <span class="post-header-special"
+                  ><span class="material-icons post-badge"> verified </span>@gabrielo</span
                 >
               </h3>
             </div>
-            <div class="post__headerDescription">
+            <div class="post-header-description">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
@@ -201,24 +201,20 @@
     </div>
 
 
-    <!-- feed ends -->
-
     <!-- widgets starts -->
     <div class="widgets">
-      <div class="widgets__input">
-        <span class="material-icons widgets__searchIcon"> search </span>
+      <div class="widgets-input">
+        <span class="material-icons widgets-search-icon"> search </span>
         <input type="text" placeholder="Procure Eventos" />
       </div>
 
-      <div class="widgets__widgetContainer">
+      <div class="widgets-widget-container">
         <h2>Próximos Eventos</h2>
-        <blockquote class="twitter-tweet">
+        <blockquote>
           <p>Evento 1</p>
           <p>Evento 2</p>
         </blockquote>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
-    <!-- widgets ends -->
   </body>
 </html>
