@@ -56,13 +56,15 @@ ActiveRecord::Schema.define(version: 2022_06_08_145705) do
   create_table "events", force: :cascade do |t|
     t.date "date"
     t.string "name"
-    t.string "local"
+    t.string "address"
     t.string "description"
     t.string "category"
     t.boolean "private", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
