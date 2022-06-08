@@ -43,9 +43,7 @@
       </div>
     </div>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </ul>
   </div>
 </div>
