@@ -10,4 +10,7 @@ class User < ApplicationRecord
   def followers
     Follow.where(followed_id: id).map(&:user)
   end
+
+  validates :username, presence: true, uniqueness: true
+  validates :photo, :first_name, :last_name, :address, presence: true
 end
