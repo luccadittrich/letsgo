@@ -7,7 +7,7 @@
 			    <h6><%= event.category %></h6>
 			    <%= cl_image_tag event.photo.key, class: 'rounded ms-3', height: 100, width: 100, crop: :fill %>
           <%= link_to event_path(event), class: 'text-decoration-none' do %>
-            <div>
+            <div class="more-info-button">
               <p>SAIBA MAIS <i class="fas fa-chevron-right"></i></p>
             </div>
           <% end %>
