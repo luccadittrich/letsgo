@@ -116,7 +116,7 @@ body {
 
 .tweetBox {
   padding-bottom: 10px;
-  border: 8px solid var(--twitter-background);
+  border: 2px solid var(--twitter-background);
   padding-right: 10px;
 }
 
@@ -147,11 +147,15 @@ body {
   border-radius: 30px;
   width: 80px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: auto;
 }
 
 /* post */
+.text-holder {
+  border-radius: 30px;
+}
+
 .post__avatar img {
   border-radius: 50%;
   height: 40px;
@@ -160,7 +164,7 @@ body {
 .post {
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid var(--twitter-background);
+  border: 2px solid var(--twitter-background);
   padding-bottom: 10px;
 }
 
@@ -242,4 +246,26 @@ body {
 .widgets__widgetContainer h2 {
   font-size: 18px;
   font-weight: 800;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+
+.profile-info .username {
+  color: #6e767d;
+}
+
+.option-icon ion-icon {
+  font-size: 16px;
+  margin-top: 2px;
 }
