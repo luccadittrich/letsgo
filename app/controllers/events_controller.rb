@@ -3,7 +3,11 @@ class EventsController < ApplicationController
   # before_action :set_event, only: %i[show edit update destroy]
 
   def index
-    @events = Event.all.order(created_at: :desc)
+    if params[:query].present?
+      @events = Event.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @events = Event.all.order(created_at: :desc)
+    end
   end
 
   def show
