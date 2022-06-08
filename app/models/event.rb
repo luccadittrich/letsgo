@@ -5,4 +5,5 @@ class Event < ApplicationRecord
   has_one_attached :photo
 
   validates :date, :name, :local, :description, presence: true
+
 end
