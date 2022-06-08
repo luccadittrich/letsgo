@@ -1,38 +1,71 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
+<div class ="devise-page">
+<main class="flex align-items-center justify-content-center">
+  <section id="mobile" class="flex">
+  </section>
+  <section id="auth" class="flex direction-column">
+      <div class="panel login flex direction-column">
+      <h2>Sign up</h2>
+          <h1 title="Lets Go" class="flex justify-content-center">
+            <%= link_to "#", class: "logo" do %>
+              <%= image_tag "letsgo.png", style: 'width: 130px;height: 130px' %>
+            <% end %>
+          </h1>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+                input_html: { autocomplete: "email" }, 
+                placeholder: "Email*"%>
+              <%= f.input :password,
+                label: false,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password*"%>
+              <%= f.input :password_confirmation,
+                label: false,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name,
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password confirmation*"%>
+              <%= f.input :first_name,
+                label: false,
                 required: true,
-                input_html: { autocomplete: "given-name" } %>
-    <%= f.input :last_name,
+                input_html: { autocomplete: "given-name" },
+                placeholder: "First name*" %>
+              <%= f.input :last_name,
+                label: false,
                 required: true,
-                input_html: { autocomplete: "family-name" } %>
-    <%= f.input :username,
+                input_html: { autocomplete: "family-name" },
+                placeholder: "Last name*" %>
+              <%= f.input :username,
+                label: false,
                 required: true,
-                input_html: { autocomplete: "username" } %>
-    <%= f.input :address,
+                input_html: { autocomplete: "username" },
+                placeholder: "Username*" %>
+              <%= f.input :address,
                 required: true,
-                input_html: { autocomplete: "street-address" } %>
-    <%= f.input :photo, as: :file %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                label: false,
+                input_html: { autocomplete: "street-address" },
+                placeholder: "Adress*" %>
+              <%= f.input :photo, as: :file %>
+              <%= f.button :submit, "Sign up", class: "button" %>
+            </div>
+          <% end %> 
+          </div>
+          <div class="flex separator align-items-center">
+              <span></span>
+              <div class="or">OU</div>
+              <span></span>
+            </div>
+          <div class="panel register-new-user flex direction-column align-items-center">
+              <div class="flex justify-content-center">
+                  <%= "Já tem uma conta?" %>
+                  <%= link_to "Faça login", new_user_session_path %>
+              </div>              
+          </div>
+        </div>
+  </main>
+</div>
