@@ -1,57 +1,49 @@
-    <div class="sidebar">
-
-      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-        <i class="fab fa-gofore"></i>
-      <% end %>
-
-      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option active">
-          <span class="material-icons"> home </span>
-          <h2>Home</h2>
-        </div>
-      <% end %>
-
-      <%= link_to events_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option">
-          <span class="material-icons"> search </span>
-          <h2>Eventos</h2>
-        </div>
-      <% end %>
-
-      <div class="sidebar-option">
-        <span class="material-icons"> notifications_none </span>
-        <h2>Notificações</h2>
+<div class="sidebar">
+  <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
+    <i class="fab fa-gofore"></i>
+  <% end %>
+  <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option active">
+      <span class="material-icons"> home </span>
+      <h2>Home</h2>
+    </div>
+  <% end %>
+  <%= link_to events_path, class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> search </span>
+      <h2>Eventos</h2>
+    </div>
+  <% end %>
+  <div class="sidebar-option">
+    <span class="material-icons"> notifications_none </span>
+    <h2>Notificações</h2>
+  </div>
+  <div class="sidebar-option">
+    <span class="material-icons"> mail_outline </span>
+    <h2>Mensagens</h2>
+  </div>
+  <div class="sidebar-option">
+    <span class="material-icons"> perm_identity </span>
+    <h2>Perfil</h2>
+  </div>
+  <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> add_circle_outline </span>
+      <h2>Criar Evento</h2>
+    </div>
+  <% end %>
+  <div class=" dropup">
+    <div class="sidebar-option dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="post-avatar ">
+        <%= cl_image_tag current_user.photo.key %>
       </div>
-
-      <div class="sidebar-option">
-        <span class="material-icons"> mail_outline </span>
-        <h2>Mensagens</h2>
-      </div>
-
-      <div class="sidebar-option">
-        <span class="material-icons"> perm_identity </span>
-        <h2>Perfil</h2>
-      </div>
-
-      <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option">
-          <span class="material-icons"> add_circle_outline </span>
-          <h2>Criar Evento</h2>
-        </div>
-      <% end %>
-
-      <div class="sidebar-option">
-         <div class="profile-info">
-            <div class="post-avatar">
-              <%= cl_image_tag current_user.photo.key %>
-            </div>
-          <div>
-            <p class="name"><%= current_user.first_name %></p>
-            <p class="username">@<%= current_user.username %></p>
-          </div>
-          <div class="option-icon">
-            <span class="material-icons mt-3"> more_horiz </span>
-          </div>
-        </div>
+      <div>
+        <p class="name m-0"><%= current_user.first_name %></p>
+        <p class="username">@<%= current_user.username %></p>
       </div>
     </div>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    </ul>
+  </div>
+</div>
