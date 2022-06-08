@@ -3,13 +3,13 @@
     <i class="fab fa-gofore"></i>
   <% end %>
   <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-    <div class="sidebar-option active">
+    <div class="sidebar-option <%= 'active' if @sidebar == 'home' %>">
       <span class="material-icons"> home </span>
       <h2>Home</h2>
     </div>
   <% end %>
   <%= link_to events_path, class: 'text-decoration-none text-dark' do %>
-    <div class="sidebar-option">
+    <div class="sidebar-option <%= 'active' if @sidebar == 'events' %>">
       <span class="material-icons"> search </span>
       <h2>Eventos</h2>
     </div>
@@ -27,19 +27,24 @@
     <h2>Perfil</h2>
   </div>
   <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
-    <div class="sidebar-option">
+    <div class="sidebar-option <%= 'active' if @sidebar == 'new' %>">
       <span class="material-icons"> add_circle_outline </span>
       <h2>Criar Evento</h2>
     </div>
   <% end %>
-  <div class=" dropup">
+  <div class="dropup">
     <div class="sidebar-option dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      <div class="post-avatar ">
-        <%= cl_image_tag current_user.photo.key %>
+      <div class="profile-info">
+        <div class="post-avatar ">
+          <%= cl_image_tag current_user.photo.key %>
+        </div>
+        <div>
+          <p class="name m-0"><%= current_user.first_name %></p>
+          <p class="username">@<%= current_user.username %></p>
+        </div>
       </div>
-      <div>
-        <p class="name m-0"><%= current_user.first_name %></p>
-        <p class="username">@<%= current_user.username %></p>
+      <div class="option-icon">
+        <span class="material-icons mt-3"> more_horiz </span>
       </div>
     </div>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

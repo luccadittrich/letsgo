@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     else
       @events = Event.all.order(created_at: :desc)
     end
+    @sidebar = 'events'
   end
 
   def show
@@ -17,6 +18,7 @@ class EventsController < ApplicationController
   # get pro form
   def new
     @event = Event.new
+    @sidebar = 'new'
   end
 
   # post do form
