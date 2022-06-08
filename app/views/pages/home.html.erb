@@ -47,8 +47,8 @@
               <%= cl_image_tag current_user.photo.key %>
             </div>
           <div>
-            <p class="name">Djez</p>
-            <p class="username">@gessicahug</p>
+            <p class="name"><%= current_user.first_name %></p>
+            <p class="username">@<%= current_user.username %></p>
           </div>
           <div class="option-icon">
             <span class="material-icons mt-3"> more_horiz </span>
