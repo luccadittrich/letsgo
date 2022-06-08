@@ -10,16 +10,24 @@
   <body>
     <!-- sidebar -->
     <div class="sidebar">
-      <i class="fab fa-gofore"></i>
-      <div class="sidebarOption active">
-        <span class="material-icons"> home </span>
-        <h2>Home</h2>
-      </div>
 
-      <div class="sidebarOption">
-        <span class="material-icons"> search </span>
-        <h2>Eventos</h2>
+      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
+        <i class="fab fa-gofore"></i>
+      <% end %>
+
+      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
+        <div class="sidebarOption active">
+          <span class="material-icons"> home </span>
+          <h2>Home</h2>
       </div>
+      <% end %>
+
+      <%= link_to events_path, class: 'text-decoration-none text-dark' do %>
+        <div class="sidebarOption">
+          <span class="material-icons"> search </span>
+          <h2>Eventos</h2>
+        </div>
+      <% end %>
 
       <div class="sidebarOption">
         <span class="material-icons"> notifications_none </span>
@@ -36,10 +44,12 @@
         <h2>Perfil</h2>
       </div>
 
-      <div class="sidebarOption">
-        <span class="material-icons"> add_circle_outline </span>
-        <h2>Criar Evento</h2>
-      </div>
+      <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
+        <div class="sidebarOption">
+          <span class="material-icons"> add_circle_outline </span>
+          <h2>Criar Evento</h2>
+        </div>
+      <% end %>
 
       <div class="sidebarOption">
          <div class="profile-info">
