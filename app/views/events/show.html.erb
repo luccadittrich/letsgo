@@ -2,3 +2,9 @@
   <h1><%= @event.name %></h1>
   <%= link_to "editar", edit_event_path, class: "btn btn-warning" %>
 </div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
