@@ -1,10 +1,10 @@
-    <div class= "container p-3 m-3">
-<div class ="devise-page">
-<main class="flex align-items-center justify-content-center">
-  <section id="mobile" class="flex">
-  </section>
-  <section id="auth" class="flex direction-column">
-      <div class="panel login flex direction-column">
+<div class= "container mt-3">
+  <div class ="devise-page">
+    <main class="flex align-items-center justify-content-center">
+      <section id="mobile" class="flex">
+      </section>
+      <section id="auth" class="flex direction-column">
+        <div class="panel login flex direction-column">
           <h1 title="Lets Go" class="flex justify-content-center">
             <%= link_to "#", class: "logo" do %>
               <%= image_tag "letsgo.png", style: 'width: 130px;height: 130px' %>
@@ -28,24 +28,24 @@
                   <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>
                 </div>
                 <div class="px-1">
-                  <%= "Remember me"%>
+                  <%= "Lembre-se de mim"%>
                 </div>
               </div>
               <%= f.button :submit, "Log in", class: "button" %>
             </div>
           <% end %>
+        </div>
+        <div class="flex separator align-items-center">
+          <span></span>
+          <div class="or">OU</div>
+          <span></span>
+        </div>
+        <div class="panel register-new-user flex direction-column align-items-center">
+          <div class="flex justify-content-center">
+            <%= "Não tem uma conta? " %>
+            <%= link_to "Cadastre-se", new_user_registration_path %>
           </div>
-          <div class="flex separator align-items-center">
-              <span></span>
-              <div class="or">OU</div>
-              <span></span>
-            </div>
-          <div class="panel register-new-user flex direction-column align-items-center">
-              <div class="flex justify-content-center">
-                  <%= "Não tem uma conta? " %>
-                  <%= link_to "Cadastre-se", new_user_registration_path %>
-              </div>
-          </div>
-  </main>
-</div>
-</div>
+        </div>
+      </main>
+    </div>
+  </div>
