@@ -1,222 +1,97 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Let's Go!</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- sidebar -->
-    <div class="sidebar">
 
-      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-        <i class="fab fa-gofore"></i>
-      <% end %>
+<!-- publishbox  -->
+<div class="publish-box">
+  <form>
+    <div class="publish-box-input">
+      <%= cl_image_tag current_user.photo.key %>
+      <input class="ps-3 text-holder" type="text" placeholder="O que você está fazendo?" />
+    </div>
+    <button class="publish-box-publish-button">POSTAR</button>
+  </form>
+</div>
 
-      <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option active">
-          <span class="material-icons"> home </span>
-          <h2>Home</h2>
-        </div>
-      <% end %>
 
-      <%= link_to events_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option">
-          <span class="material-icons"> search </span>
-          <h2>Eventos</h2>
-        </div>
-      <% end %>
+<!-- post 1 -->
+<div class="post">
+  <div class="post-avatar">
+    <img
+      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+      alt=""
+    />
+  </div>
 
-      <div class="sidebar-option">
-        <span class="material-icons"> notifications_none </span>
-        <h2>Notificações</h2>
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          Djez
+          <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@djez</span
+          >
+        </h3>
       </div>
-
-      <div class="sidebar-option">
-        <span class="material-icons"> mail_outline </span>
-        <h2>Mensagens</h2>
-      </div>
-
-      <div class="sidebar-option">
-        <span class="material-icons"> perm_identity </span>
-        <h2>Perfil</h2>
-      </div>
-
-      <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
-        <div class="sidebar-option">
-          <span class="material-icons"> add_circle_outline </span>
-          <h2>Criar Evento</h2>
-        </div>
-      <% end %>
-
-      <div class="sidebar-option">
-         <div class="profile-info">
-            <div class="post-avatar">
-              <%= cl_image_tag current_user.photo.key %>
-            </div>
-          <div>
-            <p class="name"><%= current_user.first_name %></p>
-            <p class="username">@<%= current_user.username %></p>
-          </div>
-          <div class="option-icon">
-            <span class="material-icons mt-3"> more_horiz </span>
-          </div>
-        </div>
+      <div class="post-header-description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </div>
+    <img
+      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+      alt=""
+    />
+  </div>
+</div>
 
 
-    <!-- feed -->
-    <div class="feed">
-      <div class="feed-header">
-        <h2 id="home-h2">Home</h2>
+<!-- post 2 -->
+<div class="post">
+  <div class="post-avatar">
+    <img
+      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+      alt=""
+    />
+  </div>
+
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          Gabriel
+          <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@gabrielo</span
+          >
+        </h3>
       </div>
-
-      <!-- publishbox  -->
-      <div class="publish-box">
-        <form>
-          <div class="publish-box-input">
-            <%= cl_image_tag current_user.photo.key %>
-            <input class="ps-3 text-holder" type="text" placeholder="O que você está fazendo?" />
-          </div>
-          <button class="publish-box-publish-button">POSTAR</button>
-        </form>
-      </div>
-
-
-      <!-- post 1 -->
-      <div class="post">
-        <div class="post-avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post-body">
-          <div class="post-header">
-            <div class="post-header-text">
-              <h3>
-                Djez
-                <span class="post-header-special"
-                  ><span class="material-icons post-badge"> verified </span>@djez</span
-                >
-              </h3>
-            </div>
-            <div class="post-header-description">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <img
-            src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-
-
-      <!-- post 2 -->
-      <div class="post">
-        <div class="post-avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post-body">
-          <div class="post-header">
-            <div class="post-header-text">
-              <h3>
-                Gabriel
-                <span class="post-header-special"
-                  ><span class="material-icons post-badge"> verified </span>@gabrielo</span
-                >
-              </h3>
-            </div>
-            <div class="post-header-description">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <img
-            src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-            alt=""
-          />
-
-        </div>
-      </div>
-      <!-- post 3 -->
-      <div class="post">
-        <div class="post-avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post-body">
-          <div class="post-header">
-            <div class="post-header-text">
-              <h3>
-                Ícaro
-                <span class="post-header-special"
-                  ><span class="material-icons post-badge"> verified </span>@icaroleon</span
-                >
-              </h3>
-            </div>
-            <div class="post-header-description">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <img
-            src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-            alt=""
-          />
-
-        </div>
-      </div>
-
-      <!-- post 2 -->
-      <div class="post">
-        <div class="post-avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post-body">
-          <div class="post-header">
-            <div class="post-header-text">
-              <h3>
-                Gabriel
-                <span class="post-header-special"
-                  ><span class="material-icons post-badge"> verified </span>@gabrielo</span
-                >
-              </h3>
-            </div>
-            <div class="post-header-description">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <img
-            src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-            alt=""
-          />
-
-        </div>
+      <div class="post-header-description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </div>
+    <img
+      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+      alt=""
+    />
 
+  </div>
+</div>
+<!-- post 3 -->
+<div class="post">
+  <div class="post-avatar">
+    <img
+      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+      alt=""
+    />
+  </div>
 
-    <!-- widgets starts -->
-    <div class="widgets">
-      <div class="widgets-input">
-        <span class="material-icons widgets-search-icon"> search </span>
-        <input type="text" placeholder="Procure Eventos" />
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          Ícaro
+          <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@icaroleon</span
+          >
+        </h3>
       </div>
+<<<<<<< HEAD
 
       <div class="widgets-widget-container">
         <h2>Próximos Eventos</h2>
@@ -229,7 +104,48 @@
           data-mapbox-markers-value="<%= @markers.to_json %>"
           data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+=======
+      <div class="post-header-description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+>>>>>>> master
       </div>
     </div>
-  </body>
-</html>
+    <img
+      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+      alt=""
+    />
+
+  </div>
+</div>
+
+<!-- post 2 -->
+<div class="post">
+  <div class="post-avatar">
+    <img
+      src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+      alt=""
+    />
+  </div>
+
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          Gabriel
+          <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@gabrielo</span
+          >
+        </h3>
+      </div>
+      <div class="post-header-description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <img
+      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+      alt=""
+    />
+
+  </div>
+</div>
+</div>

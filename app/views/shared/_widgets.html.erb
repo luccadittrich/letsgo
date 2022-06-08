@@ -1,0 +1,19 @@
+    <div class="widgets">
+      <div class="widgets-input">
+        <span class="material-icons widgets-search-icon pe-3"> search </span>
+        <%= form_tag events_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Procure um Evento"
+          %>
+        <% end %>
+      </div>
+      <div class="widgets-widget-container">
+        <h2>Próximos Eventos</h2>
+        <blockquote>
+          <p>Evento 1</p>
+          <p>Evento 2</p>
+        </blockquote>
+      </div>
+    </div>

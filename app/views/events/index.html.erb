@@ -1,9 +1,33 @@
-<div class="container">
-  <h1>Eventos</h1>
-  <% @events.each do |e| %>
-    <dl><%= link_to e.name, event_path(e) %></dl>
+<div class="container mt-2">
+  <h1 class="ps-3">Eventos</h1>
+  <% @events.each do |event| %>
+    <div class="courses-container">
+	    <div class="course">
+		    <div class="course-preview">
+			    <h6><%= event.category %></h6>
+			    <%= cl_image_tag event.photo.key, class: 'rounded ms-3', height: 100, width: 100, crop: :fill %>
+          <%= link_to event_path(event), class: 'text-decoration-none' do %>
+            <div class="more-info-button">
+              <p>SAIBA MAIS <i class="fas fa-chevron-right"></i></p>
+            </div>
+          <% end %>
+		    </div>
+		    <div class="course-info">
+			    <div class="progress-container">
+				      <span class="progress-text">
+				      	X PESSOAS VÃO COMPARECER
+				      </span>
+			      </div>
+			      <h6><%= event.date %></h6>
+			      <h2><%= event.name %></h2>
+            <%= link_to event_path(event), class: 'text-decoration-none text-dark' do %>
+			        <button class="btn-event">VER</button>
+            <% end %>
+		      </div>
+	      </div>
+    </div>
   <% end %>
-  <%= link_to "Novo evento", new_event_path, class: "btn btn-primary" %>
+  <%= link_to "Novo evento", new_event_path, class: "btn-event text-decoration-none text-white" %>
 </div>
 
 

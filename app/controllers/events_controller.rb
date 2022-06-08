@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   # before_action :set_event, only: %i[show edit update destroy]
 
   def index
+<<<<<<< HEAD
     @events = Event.all.order(created_at: :desc)
     @events = Event.all
 
@@ -13,6 +14,12 @@ class EventsController < ApplicationController
         lng: event.longitude,
         image_url: helpers.asset_url("marker.jpg")
       }
+=======
+    if params[:query].present?
+      @events = Event.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @events = Event.all.order(created_at: :desc)
+>>>>>>> master
     end
   end
 
