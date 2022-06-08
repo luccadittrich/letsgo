@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource_or_scope)
-    events_path
+     home_path
   end
 end

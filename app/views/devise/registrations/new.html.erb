@@ -17,7 +17,7 @@
                 label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }, 
+                input_html: { autocomplete: "email" },
                 placeholder: "Email*"%>
               <%= f.input :password,
                 label: false,
@@ -53,7 +53,7 @@
               <%= f.input :photo, as: :file %>
               <%= f.button :submit, "Sign up", class: "button" %>
             </div>
-          <% end %> 
+          <% end %>
           </div>
           <div class="flex separator align-items-center">
               <span></span>
@@ -64,7 +64,7 @@
               <div class="flex justify-content-center">
                   <%= "Já tem uma conta?" %>
                   <%= link_to "Faça login", new_user_session_path %>
-              </div>              
+              </div>
           </div>
         </div>
   </main>
