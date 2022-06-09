@@ -44,7 +44,7 @@ export default class extends Controller {
       const bounds = new mapboxgl.LngLatBounds()
       bounds.extend(this.userLocation)
       this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-      })
+    })
   }
 
 
