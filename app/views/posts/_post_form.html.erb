@@ -1,0 +1,6 @@
+teste
+  <%= simple_form_for [@event, @post] do |f| %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: 'btn btn-primary w-100' %>
+<% end %>
