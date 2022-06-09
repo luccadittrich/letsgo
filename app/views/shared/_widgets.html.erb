@@ -15,6 +15,14 @@
           <p>Evento 1</p>
           <p>Evento 2</p>
         </blockquote>
+        <% if current_user %>
+          <%= simple_form_for current_user, url: update_address_path, method: :patch do |f| %>
+            <%= f.input :address,
+              input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+            <%= f.submit 'Enviar' %>
+          <% end %>
+        <% end %>
         <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
