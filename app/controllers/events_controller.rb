@@ -9,9 +9,7 @@ class EventsController < ApplicationController
     else
       @events = Event.all.order(created_at: :desc)
     end
-    
     @sidebar = 'events'
-    
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -59,15 +57,6 @@ class EventsController < ApplicationController
       render :edit
     end
   end
-
-  #   @event = Event.find(params[:id])
-  #   @event.update([:id])
-  #   if @event.update
-  #     redirect_to @event, notice: "O item #{@event.name} foi editado."
-  #   else
-  #     render :edit
-  #   end
-  # end
 
   private
 
