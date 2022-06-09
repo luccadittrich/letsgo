@@ -7,10 +7,24 @@
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
+
 </div>
+<h2> Diga algo sobre o evento </h2>
+<%= render 'posts/post_form' %>
+
+<h2>Posts</h2>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.content %>
+      <%#= link_to 'remove', events_path(@event), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </li>
+  <% end %>
+</ul>
 
 <div style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
