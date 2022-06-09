@@ -5,11 +5,14 @@ class EventsController < ApplicationController
   def index
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     if params[:query].present?
-      @events = Event.where("name ILIKE ?", "%#{params[:query]}%")
+      @events = Event.search_by_name_and_category(params[:query])
     else
       @events = Event.all.order(created_at: :desc)
     end
+
     @sidebar = 'events'
+    @feed_header = 'events'
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -28,6 +31,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @sidebar = 'new'
+    @feed_header = 'new'
   end
 
   # post do form
@@ -56,6 +60,12 @@ class EventsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path, notice: "O evento #{@event.name} foi cancelado!"
   end
 
   private

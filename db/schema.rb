@@ -68,13 +68,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_171552) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "feeds", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_feeds_on_event_id"
-  end
-
   create_table "follows", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "followed_id", null: false
@@ -85,11 +78,11 @@ ActiveRecord::Schema.define(version: 2022_06_09_171552) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "feed_id", null: false
+    t.bigint "event_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["feed_id"], name: "index_posts_on_feed_id"
+    t.index ["event_id"], name: "index_posts_on_event_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -116,9 +109,8 @@ ActiveRecord::Schema.define(version: 2022_06_09_171552) do
   add_foreign_key "check_ins", "events"
   add_foreign_key "check_ins", "users"
   add_foreign_key "events", "users"
-  add_foreign_key "feeds", "events"
   add_foreign_key "follows", "users"
   add_foreign_key "follows", "users", column: "followed_id"
-  add_foreign_key "posts", "feeds"
+  add_foreign_key "posts", "events"
   add_foreign_key "posts", "users"
 end
