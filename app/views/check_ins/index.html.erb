@@ -1,6 +1,10 @@
 <div class="container mt-2">
   <h2>Presença confirmada</h2>
-  <% @check_ins.each do |c| %>
-    <%= c.name %>
-  <% end %>
+  <ul>
+    <% @check_ins.each do |c| %>
+      <% if c.user_id == current_user.id %>
+        <li><%= c.event.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
