@@ -37,7 +37,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.new(event_params)
+    @event = Event.find(params[:id])
 
     if @event.update(event_params)
       redirect_to @event, notice: "#{@event.name} foi editado."
