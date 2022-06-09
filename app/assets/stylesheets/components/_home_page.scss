@@ -269,3 +269,11 @@ body {
   font-size: 16px;
   margin-top: 2px;
 }
+
+.dropup .dropdown-toggle::after {
+  display: contents;
+}
+
+.dropdown-menu {
+  width: 100%;
+}
