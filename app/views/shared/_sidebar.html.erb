@@ -48,6 +48,8 @@
       </div>
     </div>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <%= link_to "Meus eventos", class: "dropdown-item" %>
+      <%= link_to "Eventos que irei", check_ins_path, class: "dropdown-item" %>
       <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     </ul>
   </div>
