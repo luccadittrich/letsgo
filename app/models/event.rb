@@ -6,7 +6,7 @@ class Event < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
   belongs_to :user
-  has_many :feeds
+  has_many :posts
   has_many :check_ins
   has_one_attached :photo
   geocoded_by :address
