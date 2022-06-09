@@ -25,6 +25,8 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("marker.jpg") }]
+    @post = Post.new
+    @posts = @event.posts
   end
 
   # get pro form
