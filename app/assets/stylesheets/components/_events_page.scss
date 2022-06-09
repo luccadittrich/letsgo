@@ -1,3 +1,12 @@
+.mapbox-events {
+  border: 2px solid white;
+}
+
+.new-event {
+border: 2px solid white;
+padding: 20px;
+padding-bottom: 49px;
+}
 .course {
 	background-color: #fff;
 	border-radius: 10px;
@@ -6,7 +15,18 @@
 	max-width: 100%;
 	margin: 20px;
 	overflow: hidden;
-	width: 700px;
+	width: 575px;
+}
+
+.events-title{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  border: 2px solid white;
+  margin-bottom: 0px;
+}
+.courses-container {
+  border: 2px solid white;
 }
 
 .course h6 {
