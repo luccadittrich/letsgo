@@ -1,4 +1,8 @@
 <div class="feed">
   <div class="feed-header">
-    <h2 id="home-h2">Home</h2>
+    <h2 id="home-h2">
+      <%= 'Eventos' if @feed_header == 'events' %>
+      <%= 'Home' if @feed_header == 'home' %>
+      <%= 'Criar Evento' if @feed_header == 'new' %>
+    </h2>
   </div>
