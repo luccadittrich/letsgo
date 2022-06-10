@@ -19,15 +19,9 @@ class PostsController < ApplicationController
     end
   end
 
-    # def destroy
-    #   # no need for app/views/posts/destroy.html.erb
-    #   @post = Post.find(params[:id])
-    #   @post.destroy
-    #   redirect_to event_posts_path
-    # end
 
     private
-  
+
     def post_params
       params.require(:post).permit(:content, :photo)
     end

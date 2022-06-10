@@ -10,12 +10,9 @@ Rails.application.routes.draw do
   patch '/update_address', to: 'pages#update_address'
 
   resources :events do
-    resources :check_ins, only: %i[create]
+    resources :check_ins, only: %i[create destroy]
   end
-
-  resources :check_ins, only: %i[index destroy] do
-    # resources :posts
-  end
+  resources :check_ins, only: %i[index]
 
   resources :events do
     resources :posts
