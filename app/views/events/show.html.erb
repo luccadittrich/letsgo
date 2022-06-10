@@ -10,6 +10,7 @@
   <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
   <% if @check_in.where(event_id: params[:id]).present? %>
     <div class="btn btn-success"> Presença Confirmada </div>
+    <%= link_to "cancelar presença", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
@@ -18,38 +19,23 @@
 <% @posts.reverse_each do |post| %>
   <div class="post">
     <div class="post-avatar">
-      <%= cl_image_tag current_user.photo.key %>
-  <div class="post-body">
-    <div class="post-header">
-      <div class="post-header-text">
-        <h3>
-          <%= @user.first_name %>
-          <span class="post-header-special"
-            ><span class="material-icons post-badge"> verified </span>@<%= @user.username %></span
-          >
-        </h3>
-      </div>
-      <div class="post-header-description">
-        <p><%= post.content %></p>
-      </div>
+      <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
+
     <div class="post-body">
       <div class="post-header">
         <div class="post-header-text">
           <h3>
-            Djez
+            <%= User.where(id: post.user_id).first.first_name %>
             <span class="post-header-special"
-            ><span class="material-icons post-badge"> verified </span>@djez</span>
+              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span
+            >
           </h3>
         </div>
         <div class="post-header-description">
           <p><%= post.content %></p>
         </div>
       </div>
-      <%# <img
-      src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
-      alt=""
-    /> %>
     </div>
   </div>
 <% end %>

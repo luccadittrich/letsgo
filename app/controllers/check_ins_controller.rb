@@ -20,6 +20,12 @@ class CheckInsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:event_id])
+    @check_in = CheckIn.find_by(event: @event, user: current_user)
+    @check_in.confirmed = false
+    @event.save
+    @check_in.destroy
+    redirect_to event_path(@event)
   end
 
 
