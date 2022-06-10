@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
+    @user = current_user
+    @posts = Post.all
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
