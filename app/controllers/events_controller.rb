@@ -29,6 +29,8 @@ class EventsController < ApplicationController
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("marker.jpg") }]
     @post = Post.new
     @posts = @event.posts
+    @feed_header = 'show'
+    @widget = 'event_show'
   end
 
   # get pro form
