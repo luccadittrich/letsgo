@@ -6,17 +6,14 @@
   </div>
 </div>
 <div class="mapbox-events">
-  <%= link_to "editar", edit_event_path, class: "btn btn-warning" %>
-  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" %>
+  <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
+  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
   <% if @check_in.where(event_id: params[:id]).present? %>
     <div class="btn btn-success"> Presença Confirmada </div>
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
 </div>
-
-
-
 <%= render 'posts/post_form' %>
 <% @posts.reverse_each do |post| %>
   <div class="post">
