@@ -4,5 +4,6 @@
       <%= 'Eventos' if @feed_header == 'events' %>
       <%= 'Home' if @feed_header == 'home' %>
       <%= 'Criar Evento' if @feed_header == 'new' %>
+      <%= @event.name if @feed_header == 'show' %>
     </h2>
   </div>

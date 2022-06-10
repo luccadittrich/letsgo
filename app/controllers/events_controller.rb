@@ -5,13 +5,14 @@ class EventsController < ApplicationController
   def index
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     if params[:query].present?
-      @events = Event.search_by_name_and_category(params[:query])
+      @events =fshow Event.search_by_name_and_category(params[:query])
     else
       @events = Event.all.order(created_at: :desc)
     end
-
+    @check_ins = CheckIn.where(user_id: current_user)
     @sidebar = 'events'
     @feed_header = 'events'
+    @widget = 'events'
 
     @markers = @events.geocoded.map do |event|
       {
@@ -29,6 +30,8 @@ class EventsController < ApplicationController
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("house.png") }]
     @post = Post.new
     @posts = @event.posts
+    @feed_header = 'show'
+    @widget = 'event'
   end
 
   # get pro form

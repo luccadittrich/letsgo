@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :check_ins, only: %i[index destroy] do
-    resources :posts
+    # resources :posts
   end
 
   resources :events do

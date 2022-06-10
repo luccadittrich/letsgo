@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
   def home
+    @user = current_user
+    @posts = Post.all
+    @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
     @events = Event.all
+    @check_ins = CheckIn.where(user_id: current_user)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @events.geocoded.map do |event|
       {

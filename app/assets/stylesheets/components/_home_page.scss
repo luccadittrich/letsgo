@@ -136,20 +136,39 @@ body {
   font-size: 20px;
   border: none;
   outline: none;
+  width: 500px;
+
 }
+
 
 .publish-box-publish-button {
   background-color: var(--letsgo-color);
   border: none;
   color: white;
   font-weight: 900;
-
   border-radius: 30px;
   width: 80px;
   height: 40px;
   margin-top: 10px;
   margin-left: auto;
 }
+
+.publish-box-publish-button-post {
+  background-color: var(--letsgo-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin-top: -10px;
+  margin-left: 500px;
+  margin-bottom: 10px;
+}
+
+// .form-control {
+//   width: 450px;
+// }
 
 /* post */
 .text-holder {
@@ -246,6 +265,11 @@ body {
 .widgets-widget-container h2 {
   font-size: 18px;
   font-weight: 800;
+}
+
+.widget-image {
+  width: 200px;
+  height: 200px;
 }
 
 .profile-info {

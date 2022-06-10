@@ -1,16 +1,25 @@
-<div class="container mt-2">
-  <h1><%= @event.name %></h1>
-  <%= link_to "editar", edit_event_path, class: "btn btn-warning" %>
-  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" %>
+<div class="mapbox-events">
+  <div class="mapbox-box" style="width: 100%; height: 300px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+<div class="mapbox-events">
+  <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
+  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
   <% if @check_in.where(event_id: params[:id]).present? %>
     <div class="btn btn-success"> Presença Confirmada </div>
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
-
 </div>
-<h2> Diga algo sobre o evento </h2>
 <%= render 'posts/post_form' %>
+<% @posts.reverse_each do |post| %>
+  <div class="post">
+    <div class="post-avatar">
+      <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
+    </div>
 
 <h2>Posts</h2>
 <ul>
@@ -28,3 +37,20 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   data-mapbox-user-location-value="false">
 </div>
+    <div class="post-body">
+      <div class="post-header">
+        <div class="post-header-text">
+          <h3>
+            <%= User.where(id: post.user_id).first.first_name %>
+            <span class="post-header-special"
+              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span
+            >
+          </h3>
+        </div>
+        <div class="post-header-description">
+          <p><%= post.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
