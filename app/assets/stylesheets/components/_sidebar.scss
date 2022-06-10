@@ -1,0 +1,32 @@
+.username{
+ text-align: center;
+ margin-bottom: 0px;
+}
+
+.dropdown-menu {
+  border-radius: 4px;
+  transition-duration: 0.3s;
+  bottom: 100%;
+  position: bottom;
+
+ 
+
+  .dropdown-item{
+    display: inline-block;
+  }
+  
+  #edit-profile-item{
+    text-align: left;
+    padding-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+}
+
+.dropdown-icon {
+  padding: 20px;
+  font-size: 20px;
+  display: inline;
+}
