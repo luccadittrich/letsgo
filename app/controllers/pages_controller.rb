@@ -12,15 +12,15 @@ class PagesController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        image_url: helpers.asset_url("marker.jpg")
+        image_url: helpers.asset_url("house.png")
       }
     end
 
-    @markers << {
-      lat: current_user.latitude,
-      lng: current_user.longitude,
-      image_url: helpers.asset_url("bluemarker.png")
-    }
+    # @markers << {
+    #   lat: current_user.latitude,
+    #   lng: current_user.longitude,
+    #   image_url: helpers.asset_url("car.jpg")
+    # }
   end
 
   def update_address
