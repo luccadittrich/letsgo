@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        image_url: helpers.asset_url("marker.jpg")
+        image_url: helpers.asset_url("house.png")
       }
     end
 

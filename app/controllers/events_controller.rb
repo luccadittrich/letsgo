@@ -17,7 +17,7 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        image_url: helpers.asset_url("marker.jpg")
+        image_url: helpers.asset_url("house.png")
       }
     end
   end
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @user = current_user
     @check_in = CheckIn.where(user: current_user)
-    @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("marker.jpg") }]
+    @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("house.png") }]
     @post = Post.new
     @posts = @event.posts
   end

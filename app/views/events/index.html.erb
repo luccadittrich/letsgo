@@ -6,6 +6,14 @@
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+  <% if current_user %>
+    <%= simple_form_for current_user, url: update_address_path, method: :patch do |f| %>
+      <%= f.input :address,
+        input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+        wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+      <%= f.submit 'Enviar' %>
+    <% end %>
+  <% end %>
   <% @events.each do |event| %>
     <div class="courses-container">
       <div class="course">
