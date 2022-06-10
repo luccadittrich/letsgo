@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
     @events = Event.all
