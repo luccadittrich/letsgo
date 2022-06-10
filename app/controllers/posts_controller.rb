@@ -1,20 +1,23 @@
 class PostsController < ApplicationController
 
-    #def show
-    #end
-    
-    def create
-      @event = Event.find(params[:event_id])
-      @post - Post.new(post_params)
-      @post.event = @event
-      # no need for app/views/posts/create.html.erb
-      @post.user = current_user
-      if @post.save
-        redirect_to event_path(@event)
-      else
-        render "events/show"
-      end
+  def new
+    @event = Event.find(params[:event_id])
+    @post = Post.new
+  end
+
+  def create
+    @event = Event.find(params[:event_id])
+    @post = Post.new(post_params)
+    @post.event = @event
+    @post.user = current_user
+    @post.save
+    # no need for app/views/posts/create.html.erb
+    if @post.save
+      redirect_to event_path(@event)
+    else
+      render :new
     end
+  end
 
     # def destroy
     #   # no need for app/views/posts/destroy.html.erb
@@ -24,12 +27,8 @@ class PostsController < ApplicationController
     # end
 
     private
-
-    def set_post
-      @post = Post.find(params[:id])
-    end
   
     def post_params
-      params.require(:post).permit(:description, :photo)
+      params.require(:post).permit(:content, :photo)
     end
 end
