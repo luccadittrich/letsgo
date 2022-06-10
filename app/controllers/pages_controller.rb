@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     # @markers << {
     #   lat: current_user.latitude,
     #   lng: current_user.longitude,
-    #   image_url: helpers.asset_url("car.jpg")
+    #   image_url: helpers.asset_url("bluemarker.png")
     # }
   end
 

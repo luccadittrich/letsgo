@@ -10,6 +10,7 @@
   <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
   <% if @check_in.where(event_id: params[:id]).present? %>
     <div class="btn btn-success"> Presença Confirmada </div>
+    <%= link_to "cancelar presença", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
@@ -21,22 +22,6 @@
       <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
 
-<h2>Posts</h2>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.content %>
-      <%#= link_to 'remove', events_path(@event), method: :delete, data: {confirm: 'Are you sure?'} %>
-    </li>
-  <% end %>
-</ul>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-mapbox-user-location-value="false">
-</div>
     <div class="post-body">
       <div class="post-header">
         <div class="post-header-text">
