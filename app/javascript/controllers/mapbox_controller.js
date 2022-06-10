@@ -12,11 +12,15 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v10",
+      zoom: 16
     })
     this.#addMarkersToMap()
-    this.#addUserToMap()
+    // this.#addUserToMap()
     this.#fitMapToMarkers()
+    if (window.location.href.includes('/home')) {
+      this.#userLatitudeLongitude()
+    }
   }
 
   #addMarkersToMap() {
@@ -52,8 +56,14 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     bounds.extend(this.userLocation)
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, minZoom:3, duration: 2000 })
   }
 
-
+  #userLatitudeLongitude() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.map.setCenter([position.coords.longitude, position.coords.latitude])
+      });
+    }
+  }
 }
