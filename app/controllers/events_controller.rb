@@ -9,9 +9,10 @@ class EventsController < ApplicationController
     else
       @events = Event.all.order(created_at: :desc)
     end
-
+    @check_ins = CheckIn.where(user_id: current_user)
     @sidebar = 'events'
     @feed_header = 'events'
+    @widget = 'events'
 
     @markers = @events.geocoded.map do |event|
       {
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
     @post = Post.new
     @posts = @event.posts
     @feed_header = 'show'
-    @widget = 'event_show'
+    @widget = 'event'
   end
 
   # get pro form

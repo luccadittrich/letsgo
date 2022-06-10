@@ -19,6 +19,19 @@
   <div class="post">
     <div class="post-avatar">
       <%= cl_image_tag current_user.photo.key %>
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          <%= @user.first_name %>
+          <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@<%= @user.username %></span
+          >
+        </h3>
+      </div>
+      <div class="post-header-description">
+        <p><%= post.content %></p>
+      </div>
     </div>
     <div class="post-body">
       <div class="post-header">
