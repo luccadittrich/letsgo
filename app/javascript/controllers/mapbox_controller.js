@@ -4,7 +4,8 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    userLocation: Boolean
   }
 
   connect() {
@@ -16,10 +17,10 @@ export default class extends Controller {
       zoom: 16
     })
     this.#addMarkersToMap()
-    // this.#addUserToMap()
-    this.#fitMapToMarkers()
-    if (window.location.href.includes('/home')) {
+    if (this.userLocationValue) {
       this.#userLatitudeLongitude()
+    } else {
+      this.#fitMapToMarkers()
     }
   }
 
@@ -39,19 +40,6 @@ export default class extends Controller {
     });
   }
 
-  #addUserToMap() {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      this.userLocation = [pos.coords.longitude, pos.coords.latitude]
-      new mapboxgl.Marker()
-      .setLngLat(this.userLocation)
-      .addTo(this.map)
-      const bounds = new mapboxgl.LngLatBounds()
-      bounds.extend(this.userLocation)
-      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-    })
-  }
-
-
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
@@ -62,7 +50,13 @@ export default class extends Controller {
   #userLatitudeLongitude() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.map.setCenter([position.coords.longitude, position.coords.latitude])
+        const userLocation = [position.coords.longitude, position.coords.latitude]
+        new mapboxgl.Marker()
+        .setLngLat(userLocation)
+        .addTo(this.map)
+        const bounds = new mapboxgl.LngLatBounds()
+        bounds.extend(userLocation)
+        this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
       });
     }
   }

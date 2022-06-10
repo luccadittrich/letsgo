@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   resources :events do
     resources :check_ins, only: %i[create]
   end
-  resources :check_ins, only: %i[index destroy]
+
+  resources :check_ins, only: %i[index destroy] do
     resources :posts
+  end
 
   resources :events do
     resources :posts
