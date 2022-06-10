@@ -6,43 +6,37 @@
   </div>
 </div>
 <div class="mapbox-events">
-  <%= link_to "editar", edit_event_path, class: "btn btn-warning" %>
-  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" %>
+  <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
+  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
   <% if @check_in.where(event_id: params[:id]).present? %>
     <div class="btn btn-success"> Presença Confirmada </div>
   <% else %>
     <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
   <% end %>
-
 </div>
-
-
-
 <%= render 'posts/post_form' %>
-  <% @posts.reverse_each do |post| %>
-    <div class="post">
-  <div class="post-avatar">
-    <%= cl_image_tag current_user.photo.key %>
-  </div>
-
-  <div class="post-body">
-    <div class="post-header">
-      <div class="post-header-text">
-        <h3>
-          Djez
-          <span class="post-header-special"
-            ><span class="material-icons post-badge"> verified </span>@djez</span
-          >
-        </h3>
-      </div>
-      <div class="post-header-description">
-        <p><%= post.content %></p>
-      </div>
+<% @posts.reverse_each do |post| %>
+  <div class="post">
+    <div class="post-avatar">
+      <%= cl_image_tag current_user.photo.key %>
     </div>
-    <%# <img
+    <div class="post-body">
+      <div class="post-header">
+        <div class="post-header-text">
+          <h3>
+            Djez
+            <span class="post-header-special"
+            ><span class="material-icons post-badge"> verified </span>@djez</span>
+          </h3>
+        </div>
+        <div class="post-header-description">
+          <p><%= post.content %></p>
+        </div>
+      </div>
+      <%# <img
       src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
       alt=""
     /> %>
+    </div>
   </div>
-</div>
-  <% end %>
+<% end %>
