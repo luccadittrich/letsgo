@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
+    @user = current_user
+    @posts = Post.all
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
@@ -10,7 +12,7 @@ class PagesController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        image_url: helpers.asset_url("marker.jpg")
+        image_url: helpers.asset_url("house.png")
       }
     end
 
