@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'check_ins/index'
-  get 'check_ins/create'
-  get 'check_ins/destroy'
+
   devise_for :users
   get '/home', to: 'pages#home'
   devise_scope :user do
@@ -17,5 +15,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :posts
   end
+
+  resources :profiles, only: %i[show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
