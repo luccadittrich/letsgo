@@ -60,17 +60,15 @@
       <p>Endereço: <%= @event.address.titleize %></p>
       <p>Data: <%= @event.date.strftime("%a, %d %b %Y") %></p>
       <p>Confirmados</p>
-
-        <% @check_ins.each do |ci| %>
-          <%= cl_image_tag ci.user.photo.key, class: "avatar-large", alt: "#{ci.user.first_name.titleize}" %>
+      <% @check_ins.each do |ci| %>
+        <%= cl_image_tag ci.user.photo.key, class: "avatar-large", alt: "#{ci.user.first_name.titleize}" %>
+      <% end %>
+      <p>
+        <% @check_ins.each do |c| %>
+          <%= c.user.first_name.titleize %>,
         <% end %>
-
-        <p>
-          <% @check_ins.each do |c| %>
-            <%= c.user.first_name.titleize %>,
-          <% end %>
-          e outros confirmaram
-        </p>
+        e outros confirmaram
+      </p>
     </div>
   </div>
 <% end %>
