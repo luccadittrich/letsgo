@@ -15,7 +15,8 @@ class CheckInsController < ApplicationController
   def confirm
     @event = Event.find(params[:event_id])
     @check_in = CheckIn.new(event: @event, user: current_user)
-
+    # @check_in.each do |someone|
+    # @check_in_all = CheckIn.new(event: @event, user: someone)
     @check_in.confirmed = true
   end
 
@@ -28,7 +29,16 @@ class CheckInsController < ApplicationController
     redirect_to event_path(@event)
   end
 
-
+  def check_in_others
+    name = "usuaruios"
+  end
+  
+    #@event = Event.find(params[:event_id])
+    #@check_in = CheckIn.find_by(event: @event)
+#
+    #if @event.id == @check_in.event_id # && id != current_user
+    #  @check_in.user.first_name
+    #end
 
 
 end
