@@ -1,12 +1,19 @@
   <%= simple_form_for @event do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :date %>
-  <%= f.input :address %>
-  <%= f.input :category %> <%#collection: Item::CATEGORIES %>
-  <%= f.input :photo, as: :file %>
-  <%= f.label "Evento privado?" %>
-  <%= f.check_box :private %>
-  <%= f.label "sim" %>
-  <%= f.button :submit, root_path, class: 'btn btn-primary w-100', value: "Enviar" %>
+  <h5 class = "event-form-label">Nome:</h5>
+  <%= f.input :name, label: false %>
+  <h5 class = "event-form-label">Descrição:</h5>
+  <%= f.input :description, label: false %>
+  <h5 class = "event-form-label">Data:</h5>
+  <%= f.input :date, label: false %>
+  <h5>Endereço:</h5>
+  <%= f.input :address, label: false %>
+  <h5 class = "event-form-label">Categoria:</h5>
+  <%= f.input :category, label: false %> <%#collection: Item::CATEGORIES %>
+  <h5 class = "event-form-label">Banner do evento:</h5>
+  <%= f.input :photo, as: :file, label: false %>
+  <div class= "pb-3">
+    <%= f.label "Evento privado", class: 'event-form-label' %>
+    <%= f.check_box :private, label: false %>
+  </div>
+  <%= f.button :submit, root_path, class: 'btn btn-create-event w-100', value: "ENVIAR" %>
 <% end %>

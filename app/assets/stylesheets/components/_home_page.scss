@@ -179,12 +179,46 @@ body {
   border-radius: 50%;
   height: 40px;
 }
+.published-event {
+  font-style: italic;
+  color: #6e767d;
+  font-size: small;
+  margin-bottom: 0px;
+}
 
+.event-form-label {
+  padding-left: 3px;
+}
+
+.btn-create-event {
+  background-color: #7C3E66;
+  color: white;
+}
+
+.btn-create-event:hover {
+  color: white;
+  background-color: #763961;
+}
 .post {
   display: flex;
   align-items: flex-start;
   border: 2px solid var(--letsgo-background);
   padding-bottom: 10px;
+}
+
+.post-odd {
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid var(--letsgo-background);
+  padding-bottom: 10px;
+}
+
+.post-even {
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid var(--letsgo-background);
+  padding-bottom: 10px;
+  background-color: #FBF6F4;
 }
 
 .post-body img {
@@ -214,6 +248,8 @@ body {
 .post-header-text h3 {
   font-size: 15px;
   margin-bottom: 5px;
+  color: #7C3E66;
+  font-weight: bold;
 }
 
 .post-header-description {
@@ -224,6 +260,7 @@ body {
 .post-body {
   flex: 1;
   padding: 10px;
+  padding-bottom: 0px;
 }
 
 .post-avatar {
