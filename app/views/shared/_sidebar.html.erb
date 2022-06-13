@@ -35,24 +35,24 @@
   <div class="dropdown">
     <div class="sidebar-option dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       <div class="profile-info">
-        <div class="post-avatar align-middle">
-          <%= cl_image_tag current_user.photo.key%>
+        <div class="post-avatar ">
+          <%= cl_image_tag current_user.photo.key %>
         </div>
         <div>
-          <p class="name m-0"><%= current_user.first_name %></p>
-          <p class="username align-middle">@<%= current_user.username %></p>
+          <p class="name m-0 pt-0"><%= current_user.first_name %></p>
+          <p class="username">@<%= current_user.username %></p>
         </div>
-      <div class="option-icon">
-        <span class="fas fa-caret-down mt-3 dropdown-icon"> </span>
       </div>
+      <div class="option-icon">
+        <span class="material-icons mt-3"> more_horiz </span>
       </div>
     </div>
     <ul class="dropdown-menu dropdown-menu-end position-absolute nav-item" aria-labelledby="dropdownMenuButton1">
       <%= link_to "Meus eventos", "#", class: "dropdown-item" %>
-      <%= link_to "Eventos que irei", check_ins_path, class: "dropdown-item" %>
+      <%= link_to "Meus check-ins", check_ins_path, class: "dropdown-item" %>
       <div class="d-flex">
         <%= link_to edit_user_registration_path, class: "dropdown-item flex-grow-1" do %>
-          Editar profile<i class="fas fa-external-link-alt icons-dropdown"></i>
+          Editar perfil<i class="fas fa-external-link-alt icons-dropdown"></i>
         <%end%>
       </div>
       <div class="d-flex">
