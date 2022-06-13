@@ -55,7 +55,6 @@
       <% end %>
     </div>
     <div class="widgets-widget-container">
-      <h2><%= @event.name.titleize %></h2>
       <p><%= @event.description %></p>
       <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
       <p>Endereço: <%= @event.address.titleize %></p>
@@ -63,12 +62,14 @@
       <p>Confirmados</p>
 
         <% @check_ins.each do |ci| %>
-          <%= cl_image_tag ci.user.photo.key, class: "avatar", alt: "#{ci.user.first_name.titleize}" %>
+          <%= cl_image_tag ci.user.photo.key, class: "avatar-large", alt: "#{ci.user.first_name.titleize}" %>
         <% end %>
+
         <p>
           <% @check_ins.each do |c| %>
-            <%= c.user.first_name.titleize + ", " %>
+            <%= c.user.first_name.titleize %>,
           <% end %>
+          e outros confirmaram
         </p>
     </div>
   </div>
