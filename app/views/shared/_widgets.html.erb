@@ -60,8 +60,10 @@
       <p>Endereço: <%= @event.address.titleize %></p>
       <p>Data: <%= @event.date.strftime("%a, %d %b %Y") %></p>
       <p>Confirmados</p>
+      <% i = 0 %>
       <% @check_ins.each do |ci| %>
-        <%= cl_image_tag ci.user.photo.key, class: "avatar-large", alt: "#{ci.user.first_name.titleize}" %>
+        <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
+        <% i += 1 %>
       <% end %>
       <p>
         <% @check_ins.each do |c| %>
@@ -69,6 +71,9 @@
         <% end %>
         e outros confirmaram
       </p>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+        Tooltip on top
+      </button>
     </div>
   </div>
 <% end %>
