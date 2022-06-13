@@ -36,9 +36,10 @@
     <div class="sidebar-option dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       <div class="profile-info">
         <div class="post-avatar align-middle">
-          <%= cl_image_tag current_user.photo.key, height: 50, width: 50%>
+          <%= cl_image_tag current_user.photo.key%>
         </div>
         <div>
+          <p class="name m-0"><%= current_user.first_name %></p>
           <p class="username align-middle">@<%= current_user.username %></p>
         </div>
       <div class="option-icon">
