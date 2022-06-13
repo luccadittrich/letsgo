@@ -21,6 +21,14 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url("house.png")
       }
     end
+    #isto retorna um array \/
+    @filtered_events = @events.select do |event|
+      if event.private
+        event.user.follows.include?(current_user) || current_user == event.user
+      else
+        event
+      end
+    end
   end
 
   def show
@@ -30,7 +38,7 @@ class EventsController < ApplicationController
     @check_ins = CheckIn.where(event_id: params[:id])
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("house.png") }]
     @post = Post.new
-    @posts = @event.posts
+    @posts = @event.posts.order(created_at: :desc)
     @feed_header = 'show'
     @widget = 'event'
   end

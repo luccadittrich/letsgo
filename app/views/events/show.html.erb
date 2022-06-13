@@ -16,8 +16,8 @@
   <% end %>
 </div>
 <%= render 'posts/post_form' %>
-<% @posts.reverse_each do |post| %>
-  <div class="post">
+<% @posts.each_with_index do |post, index| %>
+  <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
     <div class="post-avatar">
       <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
@@ -34,6 +34,9 @@
         </div>
         <div class="post-header-description">
           <p><%= post.content %></p>
+          <% post.photos.each do |photo| %>
+            <%= cl_image_tag photo.key%>
+          <% end %>
         </div>
       </div>
     </div>
