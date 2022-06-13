@@ -1,6 +1,15 @@
-.mapboxgl-ctrl-geocoder {
-  max-width: none;
-  width: 100%;
+.mapboxgl-ctrl-geocoder{
   border: 1px solid lightgrey;
   box-shadow: none;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.geocode {
+  padding: 10px;
+}
+
+.geocode h5 {
+  font-size: 18px;
+  font-weight: 600;
 }

@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     @check_in = CheckIn.where(user: current_user)
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("house.png") }]
     @post = Post.new
-    @posts = @event.posts
+    @posts = @event.posts.order(created_at: :desc)
     @feed_header = 'show'
     @widget = 'event'
   end
