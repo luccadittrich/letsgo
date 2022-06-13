@@ -35,9 +35,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @user = current_user
     @check_in = CheckIn.where(user: current_user)
+    @check_ins = CheckIn.where(event_id: params[:id])
     @markers = [{ lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url("house.png") }]
     @post = Post.new
-    @posts = @event.posts
+    @posts = @event.posts.order(created_at: :desc)
     @feed_header = 'show'
     @widget = 'event'
   end

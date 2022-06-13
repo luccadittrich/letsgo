@@ -11,11 +11,12 @@
 </div>
 
 
-<% @posts.reverse_each do |post| %>
-  <div class="post">
+<% @posts.each_with_index do |post, index| %>
+  <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
     <div class="post-avatar">
       <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
+
 
     <div class="post-body">
       <div class="post-header">
@@ -28,8 +29,18 @@
           </h3>
         </div>
         <div class="post-header-description">
-          <p><%= post.content %></p>
-          <p>Publicado no evento: <%= post.event.name %></p>
+          <%if post.photos.present?%>
+            <p><%= post.content %></p>
+            <% post.photos.each do |photo| %>
+              <%= cl_image_tag photo.key%>
+            <% end %>
+          <% else %>
+            <p class="mb-2"><%= post.content %></p>
+            <% post.photos.each do |photo| %>
+              <%= cl_image_tag photo.key%>
+            <% end %>
+          <% end %>
+          <p class = "published-event">publicado no evento: <%= post.event.name.downcase %>, <%= post.created_at.strftime('%a %d %b %Y').downcase %>.</p>
         </div>
       </div>
     </div>
