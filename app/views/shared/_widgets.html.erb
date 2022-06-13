@@ -1,89 +1,75 @@
 <% if @widget == 'home' %>
-    <div class="widgets">
-      <div class="widgets-input">
-        <span class="material-icons widgets-search-icon pe-3"> search </span>
-        <%= form_tag events_path, method: :get do %>
-          <%= text_field_tag :query,
+  <div class="widgets">
+    <div class="widgets-input">
+      <span class="material-icons widgets-search-icon pe-3"> search </span>
+      <%= form_tag events_path, method: :get do %>
+        <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Procure um Evento"
           %>
-        <% end %>
-      </div>
-      <div class="widgets-widget-container">
-        <h2>Próximos Eventos</h2>
-        <% @check_ins.reverse_each do |ci| %>
-          <p><%= ci.event.name %></p>
-        <% end %>
-
-              <p>confirmados</p>
-                <% @check_ins.each do |ci| %>
-          <p><%= ci.user_id %></p>
-        <% end %>
-
-        <div style="width: 100%; height: 300px;"
+      <% end %>
+    </div>
+    <div class="widgets-widget-container">
+      <h2>Próximos Eventos</h2>
+      <% @check_ins.reverse_each do |ci| %>
+        <p><%= ci.event.name %></p>
+      <% end %>
+      <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
           data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
           data-mapbox-user-location-value="true">
-        </div>
       </div>
     </div>
+  </div>
 <% elsif @widget == 'events' %>
-    <div class="widgets">
-      <div class="widgets-input">
-        <span class="material-icons widgets-search-icon pe-3"> search </span>
-        <%= form_tag events_path, method: :get do %>
-          <%= text_field_tag :query,
+  <div class="widgets">
+    <div class="widgets-input">
+      <span class="material-icons widgets-search-icon pe-3"> search </span>
+      <%= form_tag events_path, method: :get do %>
+        <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Procure um Evento"
           %>
-        <% end %>
-      </div>
-      <div class="widgets-widget-container">
-        <h2>Próximos Eventos</h2>
-        <% @check_ins.reverse_each do |ci| %>
-          <p><%= ci.event.name %></p>
-        <% end %>
-
-
-              <p>confirmados</p>
-                <% @check_ins.each do |ci| %>
-          <p><%= ci.user_id %></p>
-        <% end %>
-
-      </div>
+      <% end %>
     </div>
+    <div class="widgets-widget-container">
+      <h2>Próximos Eventos</h2>
+      <% @check_ins.reverse_each do |ci| %>
+        <p><%= ci.event.name %></p>
+      <% end %>
+    </div>
+  </div>
 <% elsif @widget == 'event' %>
-    <div class="widgets">
-      <div class="widgets-input">
-        <span class="material-icons widgets-search-icon pe-3"> search </span>
-        <%= form_tag events_path, method: :get do %>
-          <%= text_field_tag :query,
+  <div class="widgets">
+    <div class="widgets-input">
+      <span class="material-icons widgets-search-icon pe-3"> search </span>
+      <%= form_tag events_path, method: :get do %>
+        <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Procure um Evento"
           %>
-        <% end %>
-      </div>
-      <div class="widgets-widget-container">
-        <h2><%= @event.name %></h2>
-        <p><%= @event.description %></p>
-        <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
-        <p>Endereço: <%= @event.address.titleize%></p>
-        <p>Data: <%=@event.date.strftime("%a, %d %b %Y") %></p>
-        <h2>Próximos Eventos</h2>
-
-
-        <p>Confirmados</p>
-        <% @check_in.each do |ci| %>
-          <p><%= "#{ci.event.user.first_name} #{ci.event.user.id}" %></p>
-
-
-          <%# if event_id == @check_in.user_id %>
-        <% end %>
-
-      </div>
+      <% end %>
     </div>
+    <div class="widgets-widget-container">
+      <h2><%= @event.name.titleize %></h2>
+      <p><%= @event.description %></p>
+      <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
+      <p>Endereço: <%= @event.address.titleize %></p>
+      <p>Data: <%= @event.date.strftime("%a, %d %b %Y") %></p>
+      <p>Confirmados</p>
+
+        <% @check_ins.each do |ci| %>
+          <%= cl_image_tag ci.user.photo.key, class: "avatar", alt: "#{ci.user.first_name.titleize}" %>
+        <% end %>
+        <p>
+          <% @check_ins.each do |c| %>
+            <%= c.user.first_name.titleize + ", " %>
+          <% end %>
+        </p>
+    </div>
+  </div>
 <% end %>

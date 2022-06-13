@@ -28,17 +28,4 @@ class CheckInsController < ApplicationController
     @check_in.destroy
     redirect_to event_path(@event)
   end
-
-  def check_in_others
-    name = "usuaruios"
-  end
-  
-    #@event = Event.find(params[:event_id])
-    #@check_in = CheckIn.find_by(event: @event)
-#
-    #if @event.id == @check_in.event_id # && id != current_user
-    #  @check_in.user.first_name
-    #end
-
-
 end
