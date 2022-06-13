@@ -1,9 +1,10 @@
-<div class="publish-box">
+<div class="publish-box w-100">
   <div class="publish-box-input">
     <%= cl_image_tag current_user.photo.key %>
     <%= simple_form_for [@event, @post] do |f| %>
         <%= f.input :content, label: false, placeholder: 'Escreva algo sobre o evento', input_html: {class: 'ps-3 text-holder'} %>
-  </div>
+        <%= f.input :photos, label: false, as: :file, input_html: { multiple: true }%>
         <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post' %>
     <% end %>
+  </div>
 </div>

@@ -21,6 +21,14 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url("house.png")
       }
     end
+    #isto retorna um array \/
+    @filtered_events = @events.select do |event|
+      if event.private
+        event.user.follows.include?(current_user) || current_user == event.user
+      else
+        event
+      end
+    end
   end
 
   def show
