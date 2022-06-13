@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @user = current_user
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
