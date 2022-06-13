@@ -2,9 +2,13 @@
   <div class="publish-box-input">
     <%= cl_image_tag current_user.photo.key %>
     <%= simple_form_for [@event, @post] do |f| %>
-        <%= f.input :content, label: false, placeholder: 'Escreva algo sobre o evento', input_html: {class: 'ps-3 text-holder'} %>
-        <%= f.input :photos, label: false, as: :file, input_html: { multiple: true }%>
-        <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post' %>
-    <% end %>
+      <%= f.input :content, label: false, placeholder: 'Escreva algo sobre o evento', input_html: {class: 'ps-3 text-holder'} %>
+      <label class="material-icons image-upload d-flex align-items-center">
+        image
+        <%= f.input :photos, label: false, as: :file, input_html: { multiple: true, class: "d-none" }%>
+        <h6 class="m-0 ps-1" id="upload-text">Foto/Imagem</h6>
+      </label>
   </div>
+      <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post' %>
+    <% end %>
 </div>
