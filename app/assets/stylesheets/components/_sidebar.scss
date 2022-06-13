@@ -1,0 +1,43 @@
+.username{
+ text-align: center;
+ margin-bottom: 0px;
+}
+.dropdown-toggle::after{
+  display:none;
+}
+
+.dropdown-menu {
+  border-radius: 4px;
+  transition-duration: 0.3s;
+  bottom: 100%;
+  position: bottom;
+
+  .dropdown-item{
+    display: inline-block;
+  }
+  
+  #edit-profile-text{
+    text-align: left;
+    vertical-align: middle;
+    font-size: 15px;
+  }
+
+  .icons-dropdown{
+    font-size: 15px;
+    padding-left: 60px;
+  }
+
+
+}
+
+.dropdown-icon {
+  padding: 20px;
+  font-size: 20px;
+  display: inline;
+}
+
+.teste {
+  color: red;
+  align-items: center;
+  display: inline;
+}
