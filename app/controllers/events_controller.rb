@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   def index
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     if params[:query].present?
-      @events =fshow Event.search_by_name_and_category(params[:query])
+      @events = Event.search_by_name_and_category(params[:query])
     else
       @events = Event.all.order(created_at: :desc)
     end
