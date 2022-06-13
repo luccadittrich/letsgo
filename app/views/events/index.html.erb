@@ -14,7 +14,7 @@
       <%= f.submit 'Enviar' %>
     <% end %>
   <% end %>
-  <% @events.each do |event| %>
+  <% @filtered_events.select do |event| %>
     <div class="courses-container">
       <div class="course">
         <div class="course-preview">
