@@ -2,6 +2,7 @@
   <div class="feed-header">
     <h2 id="home-h2">
       <%= 'Eventos' if @feed_header == 'events' %>
+       <%= 'Mensagens' if @feed_header == 'chat' %>
       <%= 'Home' if @feed_header == 'home' %>
       <%= 'Criar Evento' if @feed_header == 'new' %>
       <%= @event.name.titleize if @feed_header == 'show' %>
