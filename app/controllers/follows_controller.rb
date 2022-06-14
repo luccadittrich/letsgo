@@ -1,5 +1,4 @@
 class FollowsController < ApplicationController
-
   def create
     @follow = Follow.new(user: current_user, followed_id: params[:user_id])
     @follow.save

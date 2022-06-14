@@ -201,6 +201,7 @@ body {
 .post-avatar img {
   border-radius: 50%;
   height: 40px;
+  width: 40px;
 }
 .published-event {
   font-style: italic;
@@ -245,7 +246,6 @@ body {
 }
 
 .post-body img {
-  width: 450px;
   object-fit: contain;
   border-radius: 20px;
 }

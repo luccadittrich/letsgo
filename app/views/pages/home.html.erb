@@ -18,31 +18,43 @@
     <div class="post-avatar">
       <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
-
-
     <div class="post-body">
       <div class="post-header">
         <div class="post-header-text">
           <h3>
             <%= User.where(id: post.user_id).first.first_name %>
             <span class="post-header-special"
-              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span
+              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %> <i class="fas fa-chevron-right"><i class="fas fa-chevron-right"></i></i> <%= post.event.name.downcase %></span
             >
+            <p class = "published-event">publicado em <%= post.created_at.strftime("%a, %d %b %Y").downcase %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
           </h3>
         </div>
         <div class="post-header-description">
-          <%if post.photos.present?%>
-            <p><%= post.content %></p>
-            <% post.photos.each do |photo| %>
-              <%= cl_image_tag photo.key%>
-            <% end %>
-          <% else %>
-            <p class="mb-2"><%= post.content %></p>
-            <% post.photos.each do |photo| %>
-              <%= cl_image_tag photo.key%>
-            <% end %>
+          <p><%= post.content %></p>          
+          <% if post.photos.attached? %>
+            <% if post.photos.count > 1 %>
+              <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <% post.photos.each_with_index do |photo, index| %>
+                    <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
+                      <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
+                    </div>
+                  <% end %> 
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            <%else%>
+                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+            <% end %>   
           <% end %>
-          <p class = "published-event">publicado no evento: <%= post.event.name.downcase %>, <%= post.created_at.strftime('%a %d %b %Y').downcase %>.</p>
+          
         </div>
       </div>
     </div>
