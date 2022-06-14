@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
   resources :check_ins, only: %i[index]
 
-  resources :events do
-    resources :posts
-  end
+
+  resources :posts
+
 
   resources :follows, only: %i[create destroy]
 

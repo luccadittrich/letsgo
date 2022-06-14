@@ -41,6 +41,7 @@ class EventsController < ApplicationController
     @posts = @event.posts.order(created_at: :desc)
     @feed_header = 'show'
     @widget = 'event'
+    session[:event] = @event
   end
 
   # get pro form
