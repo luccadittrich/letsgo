@@ -1,13 +1,19 @@
 class PagesController < ApplicationController
   def home
+    @post = Post.new
+    @check_ins = CheckIn.where(user_id: current_user)
     @user = current_user
     @posts = Post.all.order(created_at: :desc)
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
     @events = Event.all
-    @check_ins = CheckIn.where(user_id: current_user)
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @check_in_event = current_user.check_ins.map do |c|
+                        c.event
+                      end
+
+
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -15,12 +21,6 @@ class PagesController < ApplicationController
         image_url: helpers.asset_url("house.png")
       }
     end
-
-    # @markers << {
-    #   lat: current_user.latitude,
-    #   lng: current_user.longitude,
-    #   image_url: helpers.asset_url("bluemarker.png")
-    # }
   end
 
   def update_address
