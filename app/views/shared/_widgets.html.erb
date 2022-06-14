@@ -58,7 +58,7 @@
       <p><%= @event.description %></p>
       <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
       <p>Endereço: <%= @event.address.titleize %></p>
-      <p>Data: <%= @event.date.strftime("%A, %d %B %Y") %></p>
+      <p>Data: <%= I18n.l(@event.date, format: :longa) %></p>
       <p>Confirmados <%= @event.check_ins.count  %></p>
       <% i = 0 %>
       <% @check_ins.each do |ci| %>

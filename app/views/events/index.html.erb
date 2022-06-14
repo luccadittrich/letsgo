@@ -24,7 +24,7 @@
               <%= event.check_ins.count %> pessoas vão comparecer
             </span>
           </div>
-          <h6><%= event.date.strftime("%a, %d %b %Y") %></h6>
+          <h6><%= I18n.l(event.date, format: :curta) %></h6>
           <h2><%= event.name.titleize %></h2>
           <%= link_to event_path(event), class: 'text-decoration-none text-dark' do %>
             <button class="btn-event">VER</button>
