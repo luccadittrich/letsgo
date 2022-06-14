@@ -21,11 +21,11 @@
         <div class="course-info">
           <div class="progress-container">
             <span class="progress-text">
-              <%= %> X pessoas vão comparecer
+              <%= event.check_ins.count %> pessoas vão comparecer
             </span>
           </div>
-          <h6><%= event.date %></h6>
-          <h2><%= event.name %></h2>
+          <h6><%= event.date.strftime("%a, %d %b %Y") %></h6>
+          <h2><%= event.name.titleize %></h2>
           <%= link_to event_path(event), class: 'text-decoration-none text-dark' do %>
             <button class="btn-event">VER</button>
           <% end %>
