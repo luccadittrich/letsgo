@@ -6,8 +6,7 @@
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Procure um Evento"
-          %>
+            placeholder: "Procure um Evento" %>
       <% end %>
     </div>
     <div class="widgets-widget-container">
@@ -73,7 +72,7 @@
             <%= c.user.first_name.titleize %>,
             <% x += 1 %>
           <% end %>
-          <%= "e outros confirmaram" if @check_ins.count < 3 && @check_ins.count > 0 %>
+          <%= "confirmaram" if @check_ins.count < 3 && @check_ins.count > 0 %>
           <%= "e outros #{@event.check_ins.count - 3} confirmaram" if @check_ins.count > 3  %>
         <% elsif @event.check_ins.count == 1 %>
           <%= @check_ins.first.user.first_name.titleize %>
