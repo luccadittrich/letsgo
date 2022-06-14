@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'check_ins/index'
-  get 'check_ins/create'
-  get 'check_ins/destroy'
+
   devise_for :users
   get '/home', to: 'pages#home'
   devise_scope :user do
@@ -17,6 +15,10 @@ Rails.application.routes.draw do
   resources :events do
     resources :posts
   end
+
+  resources :follows, only: %i[create destroy]
+
+  resources :profiles, only: %i[show]
 
   resources :chatrooms, only: [:index, :show, :create] do
     resources :messages, only: :create

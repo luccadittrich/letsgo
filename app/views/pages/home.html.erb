@@ -3,7 +3,9 @@
 <div class="publish-box">
   <form>
     <div class="publish-box-input">
-      <%= cl_image_tag current_user.photo.key %>
+      <div class="post-avatar ">
+        <%= cl_image_tag current_user.photo.key %>
+      </div>
       <input class="ps-3 text-holder" type="text" placeholder="O que você está fazendo?" />
     </div>
     <button class="publish-box-publish-button">POSTAR</button>
