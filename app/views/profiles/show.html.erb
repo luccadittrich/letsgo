@@ -1,1 +1,6 @@
 <p>hi <%= @user.first_name %></p>
+<% if @follows.present? %>
+  <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "btn btn-warning" %>
+<% else %>
+  <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "btn btn-success" %>
+<% end %>

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  resources :follows, only: %i[create destroy]
+
   resources :profiles, only: %i[show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
