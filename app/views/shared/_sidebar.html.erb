@@ -39,7 +39,7 @@
           <%= cl_image_tag current_user.photo.key%>
         </div>
         <div>
-          <p class="name m-0 pt-0"><%= current_user.first_name %></p>
+          <p class="name m-0 pt-0"><%= current_user.first_name.titleize %></p>
           <p class="username">@<%= current_user.username %></p>
         </div>
       </div>
