@@ -35,3 +35,31 @@
     transform: scale(1.05);
   }
 }
+.image4 {
+  position: relative;
+  left: -80px;
+  border: 2px black solid;
+  z-index: 6;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+
+.image5{
+  position: relative;
+  left: -100px;
+  border: 2px orange solid;
+  z-index: 5;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+.image6 {
+  position: relative;
+  left: -120px;
+  border: 2px purple solid;
+  z-index: 4;
+  &:hover{
+    transform: scale(1.05);
+  }
+}

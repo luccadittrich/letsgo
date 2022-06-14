@@ -13,7 +13,7 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name %></p>
+        <p><%= ci.event.name.titleize %></p>
       <% end %>
       <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
@@ -38,7 +38,7 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name %></p>
+        <p><%= ci.event.name.titleize %></p>
       <% end %>
     </div>
   </div>
@@ -58,8 +58,8 @@
       <p><%= @event.description %></p>
       <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
       <p>Endereço: <%= @event.address.titleize %></p>
-      <p>Data: <%= @event.date.strftime("%a, %d %b %Y") %></p>
-      <p>Confirmados</p>
+      <p>Data: <%= I18n.l(@event.date, format: :longa) %></p>
+      <p>Confirmados <%= @event.check_ins.count  %></p>
       <% i = 0 %>
       <% @check_ins.each do |ci| %>
         <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
@@ -69,7 +69,7 @@
         <% @check_ins.each do |c| %>
           <%= c.user.first_name.titleize %>,
         <% end %>
-        e outros confirmaram
+        <%= "e outros confirmaram" if @check_ins.present? %>
       </p>
     </div>
   </div>

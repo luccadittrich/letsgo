@@ -22,10 +22,12 @@
     <span class="material-icons"> mail_outline </span>
     <h2>Mensagens</h2>
   </div>
-  <div class="sidebar-option">
-    <span class="material-icons"> perm_identity </span>
-    <h2>Perfil</h2>
-  </div>
+  <%= link_to profile_path(current_user), class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> perm_identity </span>
+      <h2>Perfil</h2>
+    </div>
+  <% end %>
   <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
     <div class="sidebar-option <%= 'active' if @sidebar == 'new' %>">
       <span class="material-icons"> add_circle_outline </span>
@@ -36,10 +38,10 @@
     <div class="sidebar-option dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       <div class="profile-info">
         <div class="post-avatar ">
-          <%= cl_image_tag current_user.photo.key %>
+          <%= cl_image_tag current_user.photo.key%>
         </div>
         <div>
-          <p class="name m-0 pt-0"><%= current_user.first_name %></p>
+          <p class="name m-0 pt-0"><%= current_user.first_name.titleize %></p>
           <p class="username">@<%= current_user.username %></p>
         </div>
       </div>
