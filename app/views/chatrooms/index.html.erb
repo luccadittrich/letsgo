@@ -1,0 +1,8 @@
+<div class="container">
+<ul class = "d-flex flex-column" >
+  <% @chatrooms.each do |chatroom|%>
+   <li><%= link_to "#{chatroom.user.username} - #{chatroom.followed.username}", chatroom_path(chatroom) %></li>
+  <% end %>
+</ul>
+
+</div>
