@@ -21,7 +21,11 @@
         <div class="course-info">
           <div class="progress-container">
             <span class="progress-text">
-              <%= event.check_ins.count %> pessoas vão comparecer
+              <%= event.check_ins.count if event.check_ins.count.positive? %>
+              <%= "pessoas vão comparecer" if event.check_ins.count > 1 %>
+              <%= "pessoa vai comparecer" if event.check_ins.count == 1 %>
+              <%= "nenhum confirmado" if event.check_ins.count == 0 %>
+
             </span>
           </div>
           <h6><%= I18n.l(event.date, format: :curta) %></h6>

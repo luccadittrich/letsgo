@@ -10,18 +10,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
     <% if current_user.present? %>
       <%= render 'shared/sidebar' %>
       <%= render 'shared/feed_header' %>
-        <%= yield %>
-      </div>
-      <%= render 'shared/widgets' %>
-      <%= render 'shared/flashes' %>
-    <% else %>
       <%= yield %>
-      <%= render 'shared/flashes' %>
-    <% end %>
-  </body>
+    </div>
+    <%= render 'shared/widgets' %>
+    <%= render 'shared/flashes' %>
+  <% else %>
+    <%= yield %>
+    <%= render 'shared/flashes' %>
+  <% end %>
+</body>
 </html>
