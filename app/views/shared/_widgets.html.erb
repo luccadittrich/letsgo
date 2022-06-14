@@ -13,7 +13,7 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name %></p>
+        <p><%= ci.event.name.titleize %></p>
       <% end %>
       <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
