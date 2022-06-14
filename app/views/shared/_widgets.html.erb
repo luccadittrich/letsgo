@@ -82,9 +82,9 @@
       <div class="mapbox-events">
         <% if @check_in.where(event_id: params[:id]).present? %>
           <div class="btn btn-success"> Presença Confirmada </div>
-          <%= link_to "cancelar presença", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
+          <%= link_to "cancelar ", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
         <% else %>
-          <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
+          <%= link_to '<i class="fas fa-location-arrow"></i> confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
