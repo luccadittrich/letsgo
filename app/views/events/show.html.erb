@@ -8,12 +8,6 @@
 <div class="mapbox-events">
   <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
   <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
-  <% if @check_in.where(event_id: params[:id]).present? %>
-    <div class="btn btn-success"> Presença Confirmada </div>
-    <%= link_to "cancelar presença", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
-  <% else %>
-    <%= link_to "confirmar presença", event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
-  <% end %>
 </div>
 <%= render 'posts/post_form' %>
 <% @posts.each_with_index do |post, index| %>
@@ -21,7 +15,6 @@
     <div class="post-avatar">
       <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
     </div>
-
     <div class="post-body">
       <div class="post-header">
         <div class="post-header-text">
@@ -32,7 +25,7 @@
           </h3>
         </div>
         <div class="post-header-description">
-          <p><%= post.content %></p>          
+          <p><%= post.content %></p>
           <% if post.photos.attached? %>
             <% if post.photos.count > 1 %>
               <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
@@ -41,7 +34,7 @@
                     <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
                       <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
                     </div>
-                  <% end %> 
+                  <% end %>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -53,8 +46,8 @@
                 </div>
               </div>
             <%else%>
-                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
-            <% end %>   
+              <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+            <% end %>
           <% end %>
         </div>
       </div>
