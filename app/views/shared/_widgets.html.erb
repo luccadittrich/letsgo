@@ -60,7 +60,7 @@
       <p>Data: <%= I18n.l(@event.date, format: :longa) %></p>
       <p>Confirmados <%= @event.check_ins.count  %></p>
       <% i = 0 %>
-      <% @check_ins.each do |ci| %>
+      <% @check_ins.last(5).reverse_each do |ci| %>
         <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
         <% i += 1 %>
         <%= break if i == 5 %>
@@ -79,12 +79,12 @@
           <%= "confirmou" if @check_ins.count == 1  %>
         <% end %>
       </p>
-      <div class="mapbox-events">
+      <div class="">
         <% if @check_in.where(event_id: params[:id]).present? %>
-          <div class="btn btn-success"> Presença Confirmada </div>
-          <%= link_to "cancelar ", event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning" %>
+          <div class="btn btn-success btn-small"> Presença Confirmada </div>
+          <%= link_to '<i class="fas fa-times-circle"></i> cancelar'.html_safe, event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-warning btn-small" %>
         <% else %>
-          <%= link_to '<i class="fas fa-location-arrow"></i> confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success" %>
+          <%= link_to '<i class="fas fa-location-arrow"></i> confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn btn-success btn-confirm" %>
         <% end %>
       </div>
     </div>
