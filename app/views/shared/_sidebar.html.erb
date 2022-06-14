@@ -18,14 +18,18 @@
     <span class="material-icons"> notifications_none </span>
     <h2>Notificações</h2>
   </div>
-  <div class="sidebar-option">
-    <span class="material-icons"> mail_outline </span>
-    <h2>Mensagens</h2>
-  </div>
-  <div class="sidebar-option">
-    <span class="material-icons"> perm_identity </span>
-    <h2>Perfil</h2>
-  </div>
+  <%= link_to chatrooms_path, class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> mail_outline </span>
+      <h2>Mensagens</h2>
+    </div>
+  <% end %>
+  <%= link_to profile_path(current_user), class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> perm_identity </span>
+      <h2>Perfil</h2>
+    </div>
+  <% end %>
   <%= link_to new_event_path, class: 'text-decoration-none text-dark' do %>
     <div class="sidebar-option <%= 'active' if @sidebar == 'new' %>">
       <span class="material-icons"> add_circle_outline </span>

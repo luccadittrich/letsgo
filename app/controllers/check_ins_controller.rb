@@ -12,14 +12,6 @@ class CheckInsController < ApplicationController
     redirect_to event_path(@event), notice: "você confirmou presença em #{@event.name}"
   end
 
-  def confirm
-    @event = Event.find(params[:event_id])
-    @check_in = CheckIn.new(event: @event, user: current_user)
-    # @check_in.each do |someone|
-    # @check_in_all = CheckIn.new(event: @event, user: someone)
-    @check_in.confirmed = true
-  end
-
   def destroy
     @event = Event.find(params[:event_id])
     @check_in = CheckIn.find_by(event: @event, user: current_user)

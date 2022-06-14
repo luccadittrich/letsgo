@@ -50,6 +50,7 @@
             <% end %>
           <% end %>
         </div>
+        <p class = "published-event">publicado em <%= post.created_at.strftime("%a, %d %b %Y").downcase %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
       </div>
     </div>
   </div>

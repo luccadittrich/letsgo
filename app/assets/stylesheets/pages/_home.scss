@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+
+.feed-arrow {
+  color: white;
+  border: 1px black;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.event-name {
+  background: white;
+  border: 1px solid #F2EBE9;
+  border-radius: 10%;
+  padding: 3px;
+}

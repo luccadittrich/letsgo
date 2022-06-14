@@ -4,7 +4,9 @@ class Follow < ApplicationRecord
   after_create :create_chatroom
 
   def create_chatroom
-    follow = Follow.find_by(user: user, followed: followed)
+    follow = Follow.find_by(user: followed, followed: user)
+    return unless follow
+
     @chatroom = Chatroom.create!(user: user, followed: followed)
   end
 end
