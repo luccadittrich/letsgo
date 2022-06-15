@@ -118,6 +118,7 @@ body {
   padding-bottom: 10px;
   border: 2px solid var(--letsgo-background);
   padding-right: 10px;
+  height: 150px;
 }
 
 .publish-box form {
@@ -141,6 +142,13 @@ body {
 
 }
 
+.form-select {
+  position: relative;
+  bottom: 35px;
+  left: 179px;
+  width: 200px;
+  border-radius: 30px;
+}
 
 .publish-box-publish-button {
   background-color: var(--letsgo-color);
@@ -165,6 +173,21 @@ body {
   margin-top: -10px;
   margin-left: 500px;
   margin-bottom: 10px;
+}
+
+.publish-box-publish-button-post-home {
+  background-color: var(--letsgo-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin-top: -10px;
+  margin-left: 500px;
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 80px;
 }
 
 .image-upload {
