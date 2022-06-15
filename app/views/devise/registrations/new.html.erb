@@ -19,7 +19,7 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" },
-                placeholder: "Email*"%>
+                placeholder: "Email"%>
               <%= f.input :password,
                 label: false,
                 required: true,
@@ -50,7 +50,7 @@
                 required: true,
                 label: false,
                 placeholder: "Bio" %>
-              <%= f.input :photo, as: :file %>
+              <%= f.input :photo, as: :file, label: 'Foto de perfil' %>
               <%= f.button :submit, "Sign up", class: "button" %>
             </div>
           <% end %>

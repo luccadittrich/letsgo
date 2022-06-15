@@ -20,12 +20,12 @@
                           label: false,
                           autofocus: true,
                           input_html: { autocomplete: "email" },
-                          placeholder: "Email*" %>
+                          placeholder: "Email" %>
                 <%= f.input :password,
                           required: false,
                           label: false,
                           input_html: { autocomplete: "current-password" },
-                          placeholder: "Senha*" %>
+                          placeholder: "Senha" %>
                 <div class="d-inline-flex checkbox px-4 inline">
                   <div>
                     <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>
