@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     #isto retorna um array \/
     @filtered_events = @events.select do |event|
       if event.private
-        event.user.follows.include?(current_user) || current_user == event.user
+        event.user.followeds.include?(current_user) || current_user == event.user
       else
         event
       end
