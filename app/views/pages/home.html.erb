@@ -1,8 +1,6 @@
-
 <!-- publishbox  -->
 <div class="publish-box w-100">
   <div class="publish-box-input">
-
     <%= cl_image_tag current_user.photo.key %>
     <%= simple_form_for @post do |f| %>
       <%= f.input :content, label: false, placeholder: 'Escreva algo sobre o evento', input_html: {class: 'ps-3 text-holder'} %>
@@ -12,12 +10,10 @@
         <h6 class="m-0 ps-1" id="upload-text">Foto/Imagem</h6>
       </label>
       <%= f.association :event, selected: '', collection: @check_in_event %>
-  </div>
-      <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post' %>
-    <% end %>
+    </div>
+    <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post' %>
+  <% end %>
 </div>
-
-
 <% @posts.each_with_index do |post, index| %>
   <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
     <div class="post-avatar">
@@ -28,12 +24,14 @@
         <div class="post-header-text">
           <h3>
             <%= User.where(id: post.user_id).first.first_name %>
-            <span class="post-header-special"
-              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
+            <span class="post-header-special">
+              <span class="material-icons post-badge"> verified
+              </span>@<%= User.where(id: post.user_id).first.username %>
               <i class="fas fa-chevron-right feed-arrow"></i><i class="fas fa-chevron-right feed-arrow"></i>
-              <span class = "event-name"> <%= post.event.name.downcase %> </span> </span
-            >
-
+              <span class = "event-name">
+                <%= post.event.name.downcase %>
+              </span>
+            </span>
           </h3>
         </div>
         <div class="post-header-description">
@@ -58,12 +56,10 @@
                 </div>
               </div>
             <%else%>
-                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+              <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
             <% end %>
           <% end %>
-
           <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
-
         </div>
       </div>
     </div>
