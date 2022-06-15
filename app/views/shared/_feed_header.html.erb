@@ -6,6 +6,8 @@
       <%= 'Home' if @feed_header == 'home' %>
       <%= 'Criar Evento' if @feed_header == 'new' %>
       <%= @event.name.titleize if @feed_header == 'show' %>
+      <%= 'Perfil' if @feed_header == 'profile' %>
+
       <%#= "Editar User" if @feed_header == 'editar' %>
     </h2>
   </div>

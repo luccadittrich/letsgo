@@ -1,10 +1,71 @@
-<% if current_user == @user %>
-  <p>hi <%= @user.first_name %></p>
-<% else %>
-  <p>hi, this is <%= @user.first_name %> profile!</p>
-  <% if @follows.present? %>
-    <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "btn btn-warning" %>
-  <% else %>
-    <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "btn btn-success" %>
+<%= image_tag "car.jpg", height: 200, width: 620, resize: :fit %>
+<div class="profile-info-page">
+  <%= cl_image_tag @user.photo.key, class: 'avatar-profile-img' %>
+  <p class="profile-name"><%= @user.first_name %> <%= @user.last_name %></p>
+  <p class="profile-username">@<%= @user.username %></p>
+  <p class="bio"><%= @user.bio %></p>
+  <p class="profile-following"><%= @user.follows.count %></p>
+  <p class="profile-following-text">Seguindo</p>
+  <p class="profile-followers"><%= @user.followers.count %></p>
+  <p class="profile-followers-text">Seguidores</p>
+  <% unless @user == current_user %>
+    <% if @follows.present? %>
+      <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "unfollow-button" %>
+    <% else %>
+      <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "follow-button" %>
+    <% end %>
   <% end %>
+</div>
+
+
+<% @posts.each_with_index do |post, index| %>
+  <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
+    <div class="post-avatar">
+      <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
+    </div>
+    <div class="post-body">
+      <div class="post-header">
+        <div class="post-header-text">
+          <h3>
+            <%= User.where(id: post.user_id).first.first_name %>
+            <span class="post-header-special"
+              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
+              <i class="fas fa-chevron-right feed-arrow"></i><i class="fas fa-chevron-right feed-arrow"></i>
+              <span class = "event-name"> <%= post.event.name.downcase %> </span> </span
+            >
+
+          </h3>
+        </div>
+        <div class="post-header-description">
+          <p><%= post.content %></p>
+          <% if post.photos.attached? %>
+            <% if post.photos.count > 1 %>
+              <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <% post.photos.each_with_index do |photo, index| %>
+                    <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
+                      <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
+                    </div>
+                  <% end %>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            <%else%>
+                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+            <% end %>
+          <% end %>
+
+          <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
