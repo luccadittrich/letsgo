@@ -1,0 +1,106 @@
+.img-profile-banner{
+  border: 2px solid white;
+}
+
+.avatar-profile-img {
+  border: solid 3px white;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  bottom: 75px;
+  left: 40px;
+}
+
+.profile-info-page {
+  border: 2px solid white;
+  height: 197px;
+}
+
+.profile-name {
+  width: 200px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0;
+  padding-top: 15px;
+  position: relative;
+  bottom: 79px;
+  left: 38px;
+}
+
+.profile-username {
+  color: #6e767d;
+  bottom: 82px;
+  left: 38px;
+  position: relative;
+  width: 200px;
+
+}
+
+.profile-following {
+  position: relative;
+  bottom: 95px;
+  left: 38px;
+  font-weight: bold;
+  color: #7C3E66;
+  width: 200px;
+
+}
+.profile-followers {
+  position: relative;
+  bottom: 175px;
+  left: 130px;
+  font-weight: bold;
+  color: #7C3E66;
+  width: 200px;
+}
+
+.profile-following-text {
+  position: relative;
+  bottom: 135px;
+  left: 51px;
+  color: #6e767d;
+  width: 200px;
+}
+
+.profile-followers-text {
+  position: relative;
+  bottom: 215px;
+  left: 143px;
+  color: #6e767d;
+  width: 200px;
+}
+
+.bio {
+
+  position: relative;
+  color: black;
+  bottom: 96px;
+  left: 40px;
+  margin-bottom: 0;
+  width: 200px;
+}
+
+.follow-button {
+  background-color: var(--letsgo-color);
+  border: 5px solid var(--letsgo-color);
+  color: white !important;
+  font-weight: 600;
+  border-radius: 30px;
+  position: relative;
+  bottom: 396px;
+  left: 485px;
+  text-decoration: none;
+}
+
+.unfollow-button {
+  background-color: var(--letsgo-color);
+  border: 5px solid var(--letsgo-color);
+  color: white !important;
+  font-weight: 600;
+  border-radius: 30px;
+  position: relative;
+  bottom: 396px;
+  left: 415px;
+  text-decoration: none;
+}

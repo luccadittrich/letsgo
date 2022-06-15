@@ -22,6 +22,30 @@
       </div>
     </div>
   </div>
+<% elsif @widget == 'profile' %>
+  <div class="widgets">
+    <div class="widgets-input">
+      <span class="material-icons widgets-search-icon pe-3"> search </span>
+      <%= form_tag events_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Procure um Evento" %>
+      <% end %>
+    </div>
+    <div class="widgets-widget-container">
+      <h2>Próximos Eventos</h2>
+      <% @check_ins.reverse_each do |ci| %>
+        <p><%= ci.event.name.titleize %></p>
+      <% end %>
+      <div style="width: 100%; height: 300px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+          data-mapbox-user-location-value="true">
+      </div>
+    </div>
+  </div>
 <% elsif @widget == 'events' %>
   <div class="widgets">
     <div class="widgets-input">
@@ -41,6 +65,7 @@
       <% end %>
     </div>
   </div>
+
 <% elsif @widget == 'event' %>
   <div class="widgets">
     <div class="widgets-input">
@@ -55,7 +80,7 @@
     </div>
     <div class="widgets-widget-container widgets-event">
       <div class="mapbox-events">
-        <div class="mapbox-box" id="mapbox-event" 
+        <div class="mapbox-box" id="mapbox-event"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
           data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -79,7 +104,7 @@
           <%= "e outros #{@event.check_ins.count - 3} confirmaram presença" if @check_ins.count > 3  %>
         <% elsif @event.check_ins.count == 1 %>
           <%= @check_ins.first.user.first_name.titleize %>
-          <%= "confirmou" if @check_ins.count == 1  %>          
+          <%= "confirmou" if @check_ins.count == 1  %>
         <% end %>
       <p><i class="fas fa-map-marker-alt event-icons"></i>  <%= @event.address.titleize %></p>
       <p><i class="fas fa-calendar-day event-icons"></i>  <%= I18n.l(@event.date, format: :longa) %></p>
