@@ -15,8 +15,8 @@ class User < ApplicationRecord
   end
 
   validates :username, presence: true, uniqueness: true
-  validates :photo, :first_name, :last_name, :address, presence: true
+  validates :photo, :first_name, :last_name, presence: true
 
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 end

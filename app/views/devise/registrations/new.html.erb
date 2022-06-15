@@ -25,32 +25,31 @@
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" },
-                placeholder: "Password*"%>
+                placeholder: "Senha"%>
               <%= f.input :password_confirmation,
                 label: false,
                 required: true,
                 input_html: { autocomplete: "new-password" },
-                placeholder: "Password confirmation*"%>
+                placeholder: "Confirmar senha"%>
               <%= f.input :first_name,
                 label: false,
                 required: true,
                 input_html: { autocomplete: "given-name" },
-                placeholder: "First name*" %>
+                placeholder: "Nome" %>
               <%= f.input :last_name,
                 label: false,
                 required: true,
                 input_html: { autocomplete: "family-name" },
-                placeholder: "Last name*" %>
+                placeholder: "Sobrenome" %>
               <%= f.input :username,
                 label: false,
                 required: true,
                 input_html: { autocomplete: "username" },
-                placeholder: "Username*" %>
-              <%= f.input :address,
+                placeholder: "Username" %>
+              <%= f.input :bio,
                 required: true,
                 label: false,
-                input_html: { autocomplete: "street-address" },
-                placeholder: "Adress*" %>
+                placeholder: "Bio" %>
               <%= f.input :photo, as: :file %>
               <%= f.button :submit, "Sign up", class: "button" %>
             </div>
