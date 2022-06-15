@@ -1,8 +1,4 @@
-<%= cl_image_tag @event.photo.key, class: 'widget-banner' %>
-<div class="mapbox-events">
-  <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
-  <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
-</div>
+<%= cl_image_tag @event.photo.key, height: 300, width: 620, crop: :fill, class: 'event-banner-show'%>
 <%= render 'posts/post_form' %>
 <% @posts.each_with_index do |post, index| %>
   <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
