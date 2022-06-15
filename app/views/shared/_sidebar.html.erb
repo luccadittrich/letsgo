@@ -1,6 +1,6 @@
 <div class="sidebar">
   <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
-    <i class="fab fa-gofore"></i>
+    <%= image_tag "logo.png", height: 50, width: 50, class: 'logo-side-bar' %>
   <% end %>
   <%= link_to home_path, class: 'text-decoration-none text-dark' do %>
     <div class="sidebar-option <%= 'active' if @sidebar == 'home' %>">
