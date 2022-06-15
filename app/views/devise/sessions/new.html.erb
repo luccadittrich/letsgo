@@ -1,51 +1,56 @@
-<div class= "container mt-3">
+<div class= "container mt-3 ">
+
   <div class ="devise-page">
     <main class="flex align-items-center justify-content-center">
       <section id="mobile" class="flex">
       </section>
-      <section id="auth" class="flex direction-column">
-        <div class="panel login flex direction-column">
-          <h1 title="Lets Go" class="flex justify-content-center">
-            <%= link_to "#", class: "logo" do %>
-              <%= image_tag "letsgo.png", style: 'width: 130px;height: 130px' %>
-            <% end %>
-          </h1>
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email,
+      <div class="flex-log-in">
+        <img src="<%= ['https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80', 'https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80'].sample %> class="photo-log-in">
+        <section id="auth" class="flex direction-column">
+          <div class="panel login flex direction-column">
+            <h1 title="Lets Go" class="flex justify-content-center">
+              <%= link_to "#", class: "logo" do %>
+                <%= image_tag "new_logo.png", style: 'width: 300px;height: 200px' %>
+              <% end %>
+            </h1>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email,
                           required: false,
                           label: false,
                           autofocus: true,
                           input_html: { autocomplete: "email" },
                           placeholder: "Email*" %>
-              <%= f.input :password,
+                <%= f.input :password,
                           required: false,
                           label: false,
                           input_html: { autocomplete: "current-password" },
                           placeholder: "Senha*" %>
-              <div class="d-inline-flex checkbox px-4 inline">
-                <div>
-                  <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>
+                <div class="d-inline-flex checkbox px-4 inline">
+                  <div>
+                    <%= f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?%>
+                  </div>
+                  <div class="px-1">
+                    <%= "Lembre-se de mim"%>
+                  </div>
                 </div>
-                <div class="px-1">
-                  <%= "Lembre-se de mim"%>
-                </div>
+                <%= f.button :submit, "Entrar", class: "button" %>
               </div>
-              <%= f.button :submit, "Entrar", class: "button" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="flex separator align-items-center">
-          <span></span>
-          <div class="or">OU</div>
-          <span></span>
-        </div>
-        <div class="panel register-new-user flex direction-column align-items-center">
-          <div class="flex justify-content-center">
-            <%= "Não tem uma conta? " %>
-            <%= link_to " Cadastre-se", new_user_registration_path %>
+            <% end %>
           </div>
-        </div>
-      </main>
-    </div>
+          <div class="flex separator align-items-center">
+            <span></span>
+            <div class="or">OU</div>
+            <span></span>
+          </div>
+          <div class="panel register-new-user flex direction-column align-items-center">
+            <div class="flex justify-content-center">
+              <%= "Não tem uma conta? " %>
+              <%= link_to " Cadastre-se", new_user_registration_path %>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
+</div>
