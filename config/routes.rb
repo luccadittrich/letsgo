@@ -11,11 +11,9 @@ Rails.application.routes.draw do
     resources :check_ins, only: %i[create destroy]
   end
   resources :check_ins, only: %i[index]
-
-
+  
   resources :posts
-
-
+  
   resources :follows, only: %i[create destroy]
 
   resources :profiles, only: %i[show]
