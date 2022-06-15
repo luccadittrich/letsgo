@@ -113,10 +113,10 @@
       </p>
       <div class="">
         <% if @check_in.where(event_id: params[:id]).present? %>
-          <div class="btn btn-small"> Presença Confirmada </div>
-          <%= link_to '<i class="fas fa-times-circle"></i> cancelar'.html_safe, event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-cancel" %>
+          <div class="btn btn-small"> Confirmado(a) </div>
+          <%= link_to '<i class="fas fa-times-circle"></i> Cancelar'.html_safe, event_check_in_path(@event), method: :delete, data: {confirm: "Cancelar presença no #{@event.name}?"}, class: "btn btn-cancel" %>
         <% else %>
-          <%= link_to '<i class="fas fa-location-arrow"></i> confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn  btn-confirm" %>
+          <%= link_to '<i class="fas fa-location-arrow"></i> Confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn  btn-confirm" %>
         <% end %>
       </div>
     </div>
