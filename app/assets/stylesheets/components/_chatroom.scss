@@ -28,3 +28,30 @@
     }
   }
 }
+
+#card-chat {
+  display: flex;
+  border: 3px;
+  border-style: solid;
+  border-color: #7C3E66;
+  border-top-color: transparent;
+}
+
+#avatar-chat {
+  padding-right: 20px;
+}
+
+#content-message {
+  flex-direction: column;
+}
+
+.courses-container {
+  a {
+  color: black;
+  text-decoration: none;
+  }
+}
+
+h4 {
+  margin-bottom: 0rem;
+}
