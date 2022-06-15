@@ -10,3 +10,11 @@
 .devise-page .button {
   background-color: #7C3E66;
 }
+
+.btn-main {
+  background-color: #7C3E66;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
