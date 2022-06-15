@@ -6,7 +6,7 @@
   <p class="bio"><%= @user.bio %></p>
   <p class="profile-following"><%= @user.follows.count %></p>
   <p class="profile-following-text">Seguindo</p>
-  <p class="profile-followers"><%= @user.followeds.count %></p>
+  <p class="profile-followers"><%= @user.followers.count %></p>
   <p class="profile-followers-text">Seguidores</p>
   <% unless @user == current_user %>
     <% if @follows.present? %>
