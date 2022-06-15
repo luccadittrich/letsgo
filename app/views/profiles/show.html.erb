@@ -1,15 +1,23 @@
-<%= image_tag "car.jpg", class: 'img-profile-banner' %>
+<%= image_tag "car.jpg", height: 200, width: 620, resize: :fit %>
 <div class="profile-info-page">
   <%= cl_image_tag @user.photo.key, class: 'avatar-profile-img' %>
   <p class="profile-name"><%= @user.first_name %> <%= @user.last_name %></p>
   <p class="profile-username">@<%= @user.username %></p>
-  <p class="bio">bio</p>
+  <p class="bio"><%= @user.bio %></p>
   <p class="profile-following"><%= @user.follows.count %></p>
   <p class="profile-following-text">Seguindo</p>
   <p class="profile-followers"><%= @user.followeds.count %></p>
   <p class="profile-followers-text">Seguidores</p>
-   <%= link_to 'Seguir', follows_path(@user), method: :post, class: "follow-button" %>
+  <% unless @user == current_user %>
+    <% if @follows.present? %>
+      <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "unfollow-button" %>
+    <% else %>
+      <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "follow-button" %>
+    <% end %>
+  <% end %>
 </div>
+
+
 <% @posts.each_with_index do |post, index| %>
   <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
     <div class="post-avatar">

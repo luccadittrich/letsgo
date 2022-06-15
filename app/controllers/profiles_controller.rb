@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    @posts = Post.where(user:params[:id])
+    @posts = Post.where(user: params[:id])
     @feed_header = 'profile'
     @widget = 'profile'
     @check_ins = CheckIn.where(user_id: current_user)
