@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = Chatroom.where(user: current_user).or(Chatroom.where(followed: current_user)).to_a
+    @feed_header = 'chat'
   end
 
   def create

@@ -1,7 +1,10 @@
 <div id="message-<%= message.id %>">
   <small>
     <strong><%= message.user.username %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+    <i><%= I18n.l(message.created_at, format: :short) %></i>
   </small>
   <p><%= message.content %></p>
 </div>
+
+
+ <%# I18n.l(message.created_at, format: :curta) %>
