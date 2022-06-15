@@ -2,7 +2,6 @@
   border: 2px solid white;
 }
 
-
 .new-event {
 border: 2px solid white;
 padding: 20px;
@@ -45,11 +44,9 @@ padding-bottom: 49px;
 .course-preview {
 	background-color: #7C3E66;
 	color: #fff;
-	padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 15px;
-  padding-top: 15px;
 	max-width: 250px;
+	padding: 0px;
+
 }
 
 .course-preview a {
@@ -120,3 +117,4 @@ padding-bottom: 49px;
 .btn-event:hover {
   background-color: #693256;
 }
+
