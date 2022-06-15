@@ -53,12 +53,15 @@
           %>
       <% end %>
     </div>
-    <div class="widgets-widget-container">
-      <p><%= @event.description %></p>
-      <%= cl_image_tag @event.photo.key, class: 'widget-image' %>
-      <p>Endereço: <%= @event.address.titleize %></p>
-      <p>Data: <%= I18n.l(@event.date, format: :longa) %></p>
-      <p>Confirmados <%= @event.check_ins.count  %></p>
+    <div class="widgets-widget-container widgets-event">
+      <div class="mapbox-events">
+        <div class="mapbox-box" id="mapbox-event" 
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+      <h5 id="details">Detalhes</h5>
       <% i = 0 %>
       <% @check_ins.last(5).reverse_each do |ci| %>
         <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
@@ -73,11 +76,15 @@
             <% x += 1 %>
           <% end %>
           <%= "confirmaram" if @check_ins.count < 3 && @check_ins.count > 0 %>
-          <%= "e outros #{@event.check_ins.count - 3} confirmaram" if @check_ins.count > 3  %>
+          <%= "e outros #{@event.check_ins.count - 3} confirmaram presença" if @check_ins.count > 3  %>
         <% elsif @event.check_ins.count == 1 %>
           <%= @check_ins.first.user.first_name.titleize %>
-          <%= "confirmou" if @check_ins.count == 1  %>
+          <%= "confirmou" if @check_ins.count == 1  %>          
         <% end %>
+      <p><i class="fas fa-map-marker-alt event-icons"></i>  <%= @event.address.titleize %></p>
+      <p><i class="fas fa-calendar-day event-icons"></i>  <%= I18n.l(@event.date, format: :longa) %></p>
+      <p><i class="fab fa-font-awesome-flag event-icons"> </i> Evento criado por <b>@<%= @event.user.username%></b></p>
+      <p><b> Descrição: </b><%= @event.description %></p>
       </p>
       <div class="">
         <% if @check_in.where(event_id: params[:id]).present? %>

@@ -1,10 +1,4 @@
-<div class="mapbox-events">
-  <div class="mapbox-box" style="width: 100%; height: 300px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
+<%= cl_image_tag @event.photo.key, class: 'widget-banner' %>
 <div class="mapbox-events">
   <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
   <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
