@@ -58,6 +58,17 @@ padding-bottom: 49px;
 	text-decoration: none;
 }
 
+.course-preview h6 {
+  position: relative;
+  left: 15px;
+  top: 10px;
+}
+.course-preview p {
+  position: relative;
+  bottom: 5px;
+  left: 15px;
+}
+
 .course-info {
 	padding: 30px;
 	position: relative;
@@ -117,4 +128,3 @@ padding-bottom: 49px;
 .btn-event:hover {
   background-color: #693256;
 }
-

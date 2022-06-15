@@ -8,28 +8,24 @@
   </div>
   <% @filtered_events.select do |event| %>
     <div class="courses-container">
-      <div class="course row">
-        <div class="course-preview col">
-          <%= cl_image_tag event.photo.key, class: 'rounded event-photo-card'%>
+      <div class="course">
+        <div class="course-preview">
           <h6><%= event.category %></h6>
+          <%= cl_image_tag event.photo.key, class: 'rounded ms-3', height: 100, width: 100, crop: :fill %>
           <%= link_to event_path(event), class: 'text-decoration-none' do %>
             <div class="more-info-button">
               <p>SAIBA MAIS <i class="fas fa-chevron-right"></i></p>
             </div>
           <% end %>
         </div>
-        <div class="course-info col">
+        <div class="course-info">
           <div class="progress-container">
             <span class="progress-text">
-              <%= event.check_ins.count if event.check_ins.count.positive? %>
-              <%= "pessoas comparecerão" if event.check_ins.count > 1 %>
-              <%= "pessoa vai comparecer" if event.check_ins.count == 1 %>
-              <%= "nenhum confirmado" if event.check_ins.count == 0 %>
+              <%= event.check_ins.count %> pessoas vão comparecer
             </span>
           </div>
-          <h2><%= event.name.titleize %></h2>
           <h6><%= I18n.l(event.date, format: :curta) %></h6>
-          <h6><%= event.category %></h6>
+          <h2><%= event.name.titleize %></h2>
           <%= link_to event_path(event), class: 'text-decoration-none text-dark' do %>
             <button class="btn-event">VER</button>
           <% end %>
@@ -39,16 +35,3 @@
   <% end %>
   <%= link_to "Novo evento", new_event_path, class: "btn-event text-decoration-none text-white" %>
 </div>
-
-
-    <%# <% if current_user %>
-      <%# <div class = "geocode">
-        <h5>Busque um local</h5> %>
-        <%# <%= simple_form_for current_user, url: update_address_path, method: :patch do |f| %>
-          <%# <%= f.input :address, label: false,
-            input_html: { data: { geocoder_target: "address" }, class: "d-none" },
-            wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-          <%# <%= f.submit 'Enviar', class: 'd-none' %>
-        <%# <% end %>
-        <%# </div> %>
-    <%# <% end %>
