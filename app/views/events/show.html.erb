@@ -3,49 +3,53 @@
   <%= link_to "editar", edit_event_path, class: "btn btn-warning" if @event.user_id == current_user.id %>
   <%= link_to "cancelar", event_path, method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-danger" if @event.user_id == current_user.id  %>
 </div>
+
 <%= render 'posts/post_form' %>
+
 <% @posts.each_with_index do |post, index| %>
-  <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
-    <div class="post-avatar">
-      <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
-    </div>
-    <div class="post-body">
-      <div class="post-header">
-        <div class="post-header-text">
-          <h3>
-            <%= User.where(id: post.user_id).first.first_name %>
-            <span class="post-header-special"
-              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span>
-          </h3>
-        </div>
-        <div class="post-header-description">
-          <p><%= post.content %></p>
-          <% if post.photos.attached? %>
-            <% if post.photos.count > 1 %>
-              <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <% post.photos.each_with_index do |photo, index| %>
-                    <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
-                      <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
-                    </div>
-                  <% end %>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+  <%= link_to post_path(post) do%>
+    <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
+      <div class="post-avatar">
+        <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
+      </div>
+      <div class="post-body">
+        <div class="post-header">
+          <div class="post-header-text">
+            <h3>
+              <%= User.where(id: post.user_id).first.first_name %>
+              <span class="post-header-special"
+                ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span>
+            </h3>
+          </div>
+          <div class="post-header-description">
+            <p><%= post.content %></p>
+            <% if post.photos.attached? %>
+              <% if post.photos.count > 1 %>
+                <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <% post.photos.each_with_index do |photo, index| %>
+                      <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
+                        <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill %>
+                      </div>
+                    <% end %>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=post.id%>" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            <%else%>
-              <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+              <%else%>
+                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+          <p class = "published-event">publicado em <%= post.created_at.strftime("%a, %d %b %Y").downcase %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
         </div>
-        <p class = "published-event">publicado em <%= post.created_at.strftime("%a, %d %b %Y").downcase %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
       </div>
     </div>
-  </div>
+    <% end %>
 <% end %>

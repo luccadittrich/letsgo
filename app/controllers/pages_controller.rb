@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @post = Post.new
     @check_ins = CheckIn.where(user_id: current_user)
     @user = current_user
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.where(post_id: nil).order(created_at: :desc)
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'
