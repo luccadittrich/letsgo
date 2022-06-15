@@ -21,8 +21,16 @@
   background-color: #7C3E66;
 }
 
+.btn-main {
+  background-color: #7C3E66;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
 .btn-cancel {
   color: white !important;
   background-color: rgb(205, 0, 0);
   border-radius: 30px;
-}
+  }
