@@ -148,6 +148,12 @@ body {
 
 }
 
+.carousel-inner {
+  bottom: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
 #post_event_id {
   position: relative;
   bottom: 35px;
@@ -237,6 +243,15 @@ body {
   color: #6e767d;
   font-size: small;
   margin-bottom: 0px;
+}
+
+.published-event-with-photo {
+  font-style: italic;
+  color: #6e767d;
+  font-size: small;
+  margin-bottom: 0px;
+  position: relative;
+  top: 300px;
 }
 
 .event-form-label {
