@@ -1,5 +1,5 @@
 .btn-small {
-  font-size: 0.9em;
+
   border-radius: 30px;
   background-color: #7C3E66;
   color: white;
@@ -11,9 +11,10 @@
 .btn-confirm {
   border-radius: 30px;
   background-color:#7C3E66;
-  color: white;
+  color: white !important;
   &:hover{
     background-color:#43b071;
+    color: black !important;
   }
 }
 
