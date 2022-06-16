@@ -10,6 +10,10 @@ export default class extends Controller {
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
+    if (this.messagesTarget.children.length >= 1) {
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    }
+
   }
 
   #insertMessageAndScrollDown(data) {
