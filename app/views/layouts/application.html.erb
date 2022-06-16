@@ -9,6 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <style>
+      <%= ".message-chat.message-user-#{current_user.id}" %>  {
+        background-color: var(--letsgo-color);
+        color: white;
+        flex-direction: row;
+      }
+       <%= ".message-chat.message-user-#{current_user.id} .gap-chat" %>  {
+        text-align: start;
+        justify-content: flex-start;
+      }
+    </style>
   </head>
   <body>
     <% if current_user.present? %>
