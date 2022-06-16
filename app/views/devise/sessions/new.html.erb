@@ -1,7 +1,7 @@
-<div class= "container mt-3 dont-move">
+<div class= "container">
 
   <div class ="devise-page">
-    <main class="flex align-items-center justify-content-center">
+    <main class="flex align-items-center justify-content-center mt-10">
       <section id="mobile" class="flex">
       </section>
       <div class="flex-log-in">
@@ -35,19 +35,13 @@
                   </div>
                 </div>
                 <%= f.button :submit, "Entrar", class: "button" %>
-              </div>
+            <div class="flex justify-content-center mt-2 hover-session">
+              <%= link_to "Não tem uma conta? Cadastre-se", new_user_registration_path %>
+            </div>
             <% end %>
           </div>
-          <div class="flex separator align-items-center">
-            <span></span>
-            <div class="or">OU</div>
-            <span></span>
-          </div>
-          <div class="panel register-new-user flex direction-column align-items-center">
-            <div class="flex justify-content-center">
-              <%= "Não tem uma conta? " %>
-              <%= link_to " Cadastre-se", new_user_registration_path %>
-            </div>
+
+
           </div>
         </section>
       </div>
