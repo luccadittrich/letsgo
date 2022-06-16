@@ -1,4 +1,8 @@
-<%= image_tag "car.jpg", height: 200, width: 620, resize: :fit %>
+<% if current_user.banner.attached? %>
+  <%= cl_image_tag @user.banner.key, height: 200, width: 620, resize: :fit %>
+<% else %>
+  <%= image_tag "banner-profile.png", height: 200, width: 620, resize: :fit %>
+<% end %>
 <div class="profile-info-page">
   <%= cl_image_tag @user.photo.key, class: 'avatar-profile-img' %>
   <p class="profile-name"><%= @user.first_name %> <%= @user.last_name %></p>
