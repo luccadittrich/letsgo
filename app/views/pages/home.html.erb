@@ -37,7 +37,7 @@
             <p><%= post.content %></p>
             <% if post.photos.attached? %>
               <% if post.photos.count > 1 %>
-                <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
+                <div id="carousel<%=post.id%>" class="carousel slide posts-imgs" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <% post.photos.each_with_index do |photo, index| %>
                       <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
@@ -57,6 +57,9 @@
               <%else%>
                   <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
               <% end %>
+              <p class = "published-event-with-photo">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
+            <% else %>
+              <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
             <% end %>
           </div>
         </div>
