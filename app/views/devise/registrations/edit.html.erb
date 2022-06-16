@@ -1,32 +1,33 @@
 <div class="container">
-  <h2>Editar <%= resource_name.to_s.humanize %></h2>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
+      <h6 class="mt-2">Email:</h6>
+      <%= f.input :email, required: true, autofocus: true, label: false %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
+      <h6>Nova senha:</h6>
       <%= f.input :password,
                 hint: "Deixe em branco caso não queira mudar",
+                required: false, label: false,
+                input_html: { autocomplete: "new-password" } %>
+      <h6>Confirmar senha:</h6>
+      <%= f.input :password_confirmation, label: false,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
+      <h6>Senha atual:</h6>
+      <%= f.input :current_password, label: false,
                 hint: "Digite sua senha para confirmar as mudanças",
-                required: true,
+                required: true, label: false,
                 input_html: { autocomplete: "current-password" } %>
-      <%= f.input :photo, as: :file %>
+      <h6>Foto do perfil:</h6>
+      <%= f.input :photo, as: :file,  label: false %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, "Atualizar", class: "btn btn-success w-100" %>
+      <%= f.button :submit, "Atualizar", class: "publish-box-publish-button w-100 rounded-0" %>
     </div>
   <% end %>
-
-    <h3 class="mt-4">Cancelar minha conta</h3>
-    <p><%= link_to "Deletar conta", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Tem certeza?" }, method: :delete %>
-    <%= link_to "voltar", :back, class: "btn btn-warning" %></p>
-
+    <p><%= link_to "Voltar", :back, class: 'btn  btn-warning btn-back-edit' %>
+    <%= link_to "Deletar conta", registration_path(resource_name), class: 'btn btn-danger btn-cancel-account', data: { confirm: "Tem certeza?" }, method: :delete %>
 </div>
