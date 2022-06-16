@@ -7,6 +7,6 @@ class Follow < ApplicationRecord
     follow = Follow.find_by(user: followed, followed: user)
     return unless follow
 
-    @chatroom = Chatroom.create!(user: user, followed: followed)
+    @chatroom = Chatroom.find_or_create_by(user: user, followed: followed)
   end
 end

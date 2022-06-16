@@ -6,13 +6,14 @@
           <%= cl_image_tag chatroom.followed.photo.key, class: "avatar-large", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
         </div>
         <div id="message-content">
-          <h3><%= "Eu & #{chatroom.followed.username}".titleize %></h3>
+          <h3><%= chatroom.followed.username.titleize %></h3>
           <% if chatroom.messages.last %>
             <h4><%= chatroom.messages.last.content %></h4>
           <% else %>
             <p><%= "Envie uma mensagem para #{chatroom.followed.username}" %></p>
           <% end %>
         </div>
+        
       </div>
     <% end %>
   <%end%>

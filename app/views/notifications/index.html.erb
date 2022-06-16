@@ -1,6 +1,7 @@
-
-<ul>
-<% @notifications.each do |notification| %>
-  <li><%= "#{notification.created_at} #{notification.content}" %></li>
-<%end%>
-</ul>
+<div class="courses-container">
+  <ul class="list-group">
+  <% @notifications.each do |notification| %>
+    <li class="list-group-item"><%= "#{notification.created_at.strftime("%Y-%m-%d %H:%M")} #{notification.content}" %></li>
+  <%end%>
+  </ul>
+</div>
