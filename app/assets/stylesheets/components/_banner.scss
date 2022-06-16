@@ -1,12 +1,8 @@
-
-.photo-log-in {
-
-  object-fit: cover;
-  height: 100%;
-}
-
 .flex-log-in {
   display: flex;
-  gap: 20px;
-  height: 62vh;
+  height: 566px;
+}
+
+.hover-session:hover{
+  text-decoration: underline;
 }
