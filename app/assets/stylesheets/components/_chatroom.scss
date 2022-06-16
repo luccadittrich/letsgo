@@ -74,16 +74,14 @@ h4 {
     margin: 0;
   }
 }
-.message-current {
-  background-color: var(--letsgo-color);
-  color: white;
 
-}
-.message-friend {
+.message-chat {
   color: black;
   background-color: #F2EBE9;
+  flex-direction: row-reverse;
   .gap-chat {
     text-align: end;
+    justify-content: flex-end;
   }
 }
 .avatar-chat {
