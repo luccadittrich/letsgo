@@ -23,6 +23,8 @@
                 input_html: { autocomplete: "current-password" } %>
       <h6>Foto do perfil:</h6>
       <%= f.input :photo, as: :file,  label: false %>
+      <h6>Banner do perfil:</h6>
+      <%= f.input :banner, as: :file,  label: false %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Atualizar", class: "publish-box-publish-button w-100 rounded-0" %>

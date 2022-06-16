@@ -173,6 +173,10 @@ body {
   height: 40px;
   margin-top: 10px;
   margin-left: auto;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .publish-box-publish-button-post {
