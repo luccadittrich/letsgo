@@ -13,7 +13,11 @@
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
         <p><%= ci.event.name.titleize %></p>
+          <%= link_to event_check_in_path(ci.event_id), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
+            <span class="material-icons"> close </span>
+          <% end %>
       <% end %>
+      <h2>Explorar</h2>
       <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -36,8 +40,14 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name.titleize %></p>
+        <div class="d-flex justify-content-between">
+          <p><%= ci.event.name.titleize %></p>
+          <%= link_to event_check_in_path(ci.event_id), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
+            <span class="material-icons"> close </span>
+          <% end %>
+        </div>
       <% end %>
+      <h2>Explorar</h2>
       <div style="width: 100%; height: 300px;"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -61,7 +71,10 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name.titleize %> </p>
+        <p><%= ci.event.name.titleize %></p>
+          <%= link_to event_check_in_path(ci.event_id), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
+            <span class="material-icons"> close </span>
+          <% end %>
       <% end %>
     </div>
   </div>
@@ -120,6 +133,5 @@
         <% end %>
       </div>
     </div>
-  </div>
   </div>
 <% end %>

@@ -8,6 +8,6 @@
       <%= @event.name.titleize if @feed_header == 'show' %>
       <%= 'Perfil' if @feed_header == 'profile' %>
       <%= 'Editar perfil' if params[:action] == 'edit' && params[:controller] == 'devise/registrations' %>
-      <%= 'Editar evento' if params[:action] == 'edit' %>
+      <%= 'Editar evento' if params[:action] == 'edit' && params[:controller] == 'events'%>
     </h2>
   </div>
