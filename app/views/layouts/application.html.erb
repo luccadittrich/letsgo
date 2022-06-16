@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <style>
+      <% if current_user %>
       <%= ".message-chat.message-user-#{current_user.id}" %>  {
         background-color: var(--letsgo-color);
         color: white;
@@ -19,6 +20,7 @@
         text-align: start;
         justify-content: flex-start;
       }
+      <% end %>
     </style>
   </head>
   <body>
