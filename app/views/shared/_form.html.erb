@@ -1,15 +1,15 @@
   <%= simple_form_for @event do |f| %>
-  <h5 class = "event-form-label">Nome:</h5>
+  <h6 class = "event-form-label">Nome:</h6>
   <%= f.input :name, label: false %>
-  <h5 class = "event-form-label">Descrição:</h5>
+  <h6 class = "event-form-label">Descrição:</h6>
   <%= f.input :description, label: false %>
-  <h5 class = "event-form-label">Data:</h5>
+  <h6 class = "event-form-label">Data:</h6>
   <%= f.input :date, label: false %>
-  <h5>Endereço:</h5>
+  <h6>Endereço:</h6>
   <%= f.input :address, label: false %>
-  <h5 class = "event-form-label">Categoria:</h5>
+  <h6 class = "event-form-label">Categoria:</h6>
   <%= f.input :category, label: false %> <%#collection: Item::CATEGORIES %>
-  <h5 class = "event-form-label">Banner do evento:</h5>
+  <h6 class = "event-form-label">Banner do evento:</h6>
   <%= f.input :photo, as: :file, label: false %>
   <div class= "pb-3">
     <%= f.label "Evento privado", class: 'event-form-label' %>
