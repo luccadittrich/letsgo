@@ -1,0 +1,8 @@
+
+<ul>
+<% @notifications.each do |notification| %>
+<li> <%= "#{notification.created_at} #{notification.content}" %></li>
+
+
+<%end%>
+</ul>
