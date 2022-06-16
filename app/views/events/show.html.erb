@@ -2,11 +2,13 @@
 <%= render 'posts/post_form' %>
 
 <% @posts.each_with_index do |post, index| %>
-  <%= link_to post_path(post) do%>
     <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
-      <div class="post-avatar">
-        <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
-      </div>
+      <%= link_to profile_path(post.user) do%>  
+        <div class="post-avatar">
+          <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
+        </div>
+      <%end%>
+    <%= link_to post_path(post) do%>
       <div class="post-body">
         <div class="post-header">
           <div class="post-header-text">

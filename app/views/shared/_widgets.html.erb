@@ -96,7 +96,9 @@
       <h5 id="details">Detalhes</h5>
       <% i = 0 %>
       <% @check_ins.last(5).reverse_each do |ci| %>
-        <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
+        <%= link_to profile_path(ci.user) do%>
+          <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
+        <% end %>
         <% i += 1 %>
         <%= break if i == 5 %>
       <% end %>
@@ -125,7 +127,9 @@
         <% else %>
           <%= link_to '<i class="fas fa-location-arrow"></i> Confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn  btn-confirm" %>
         <% end %>
+        
       </div>
     </div>
   </div>
 <% end %>
+    
