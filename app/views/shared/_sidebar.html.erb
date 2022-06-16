@@ -14,10 +14,12 @@
       <h2>Eventos</h2>
     </div>
   <% end %>
-  <div class="sidebar-option">
-    <span class="material-icons"> notifications_none </span>
-    <h2>Notificações</h2>
-  </div>
+  <%= link_to notifications_path, class: 'text-decoration-none text-dark' do %>
+    <div class="sidebar-option">
+      <span class="material-icons"> notifications_none </span>
+      <h2>Notificações</h2>
+    </div>
+  <%end%>
   <%= link_to chatrooms_path, class: 'text-decoration-none text-dark' do %>
     <div class="sidebar-option">
       <span class="material-icons"> mail_outline </span>
