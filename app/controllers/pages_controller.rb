@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @post = Post.new
     @check_ins = CheckIn.where(user_id: current_user)
     @user = current_user
-    @posts = Post.where(post_id: nil).order(created_at: :desc)
+    @posts = Post.all.select { |p| p.user.id = current_user.id || current_user.follows.any? {|f| f[:followed_id] == p.user.id}}
     @widget = 'home'
     @sidebar = 'home'
     @feed_header = 'home'

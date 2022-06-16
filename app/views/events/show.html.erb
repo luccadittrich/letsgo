@@ -13,14 +13,17 @@
             <h3>
               <%= User.where(id: post.user_id).first.first_name %>
               <span class="post-header-special"
-                ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %></span>
+                ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
+                <i class="fas fa-chevron-right feed-arrow"></i><i class="fas fa-chevron-right feed-arrow"></i>
+                <span class = "event-name"> <%= post.event.name.downcase %> </span> </span
+              >
             </h3>
           </div>
           <div class="post-header-description">
             <p><%= post.content %></p>
             <% if post.photos.attached? %>
               <% if post.photos.count > 1 %>
-                <div id="carousel<%=post.id%>" class="carousel slide" data-bs-ride="carousel">
+                <div id="carousel<%=post.id%>" class="carousel slide posts-imgs" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <% post.photos.each_with_index do |photo, index| %>
                       <div class="carousel-item <%='active' if index == 0%>" data-bs-interval="5000">
@@ -38,13 +41,15 @@
                   </div>
                 </div>
               <%else%>
-                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+                  <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
               <% end %>
+              <p class = "published-event-with-photo">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
+            <% else %>
+              <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
             <% end %>
           </div>
-          <p class = "published-event">publicado em <%= post.created_at.strftime("%a, %d %b %Y").downcase %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
         </div>
       </div>
     </div>
-    <% end %>
+  <% end %>
 <% end %>

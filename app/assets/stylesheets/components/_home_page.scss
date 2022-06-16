@@ -148,7 +148,13 @@ body {
 
 }
 
-.form-select {
+.carousel-inner {
+  bottom: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#post_event_id {
   position: relative;
   bottom: 35px;
   left: 179px;
@@ -179,6 +185,8 @@ body {
   margin-top: -10px;
   margin-left: 500px;
   margin-bottom: 10px;
+  position: relative;
+  bottom: 20px;
 }
 
 .publish-box-publish-button-post-home {
@@ -237,6 +245,15 @@ body {
   color: #6e767d;
   font-size: small;
   margin-bottom: 0px;
+}
+
+.published-event-with-photo {
+  font-style: italic;
+  color: #6e767d;
+  font-size: small;
+  margin-bottom: 0px;
+  position: relative;
+  top: 300px;
 }
 
 .event-form-label {
