@@ -1,4 +1,4 @@
-<% if current_user.banner.attached? %>
+<% if @user.banner.attached? %>
   <%= cl_image_tag @user.banner.key, height: 200, width: 620, resize: :fit %>
 <% else %>
   <%= image_tag "banner-profile.png", height: 200, width: 620, resize: :fit %>
