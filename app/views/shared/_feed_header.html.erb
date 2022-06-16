@@ -7,7 +7,7 @@
       <%= 'Criar Evento' if @feed_header == 'new' %>
       <%= @event.name.titleize if @feed_header == 'show' %>
       <%= 'Perfil' if @feed_header == 'profile' %>
-
-      <%#= "Editar User" if @feed_header == 'editar' %>
+      <%= 'Editar perfil' if params[:action] == 'edit' && params[:controller] == 'devise/registrations' %>
+      <%= 'Editar evento' if params[:action] == 'edit' %>
     </h2>
   </div>

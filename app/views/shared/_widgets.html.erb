@@ -61,7 +61,7 @@
     <div class="widgets-widget-container">
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
-        <p><%= ci.event.name.titleize %></p>
+        <p><%= ci.event.name.titleize %> </p>
       <% end %>
     </div>
   </div>
@@ -120,5 +120,6 @@
         <% end %>
       </div>
     </div>
+  </div>
   </div>
 <% end %>
