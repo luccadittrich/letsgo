@@ -8,7 +8,9 @@ class CheckInsController < ApplicationController
     @check_in = CheckIn.new(event: @event, user: current_user)
     @check_in.confirmed = true
     @check_in.save
-    Notification.create(user: User.find(current_user.id), content: "O usuário #{current_user.username} confirmou presença em #{@event.name}.")
+    current_user.followers.select {|user| user.events.exists?(id:@event.id)}.uniq.each do |notified_user|
+      Notification.create(user: notified_user, content: "O usuário #{current_user.username} confirmou presença em #{@event.name}.")
+    end
     redirect_to event_path(@event), notice: "você confirmou presença em #{@event.name}"
   end
 
