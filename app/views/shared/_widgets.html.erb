@@ -115,7 +115,7 @@
       <p>
         <% if @event.check_ins.count > 1 %>
           <% x = 0 %>
-          <% @check_ins.first(3).each do |c| %>
+          <% @check_ins.first(3).reverse_each do |c| %>
             <%= c.user.first_name.titleize %>,
             <% x += 1 %>
           <% end %>
@@ -137,9 +137,8 @@
         <% else %>
           <%= link_to '<i class="fas fa-location-arrow"></i> Confirmar presença'.html_safe, event_check_ins_path(@event), method: :post, data: {confirm: "Confirmar presença no #{@event.name}?"}, class: "btn  btn-confirm" %>
         <% end %>
-        
+
       </div>
     </div>
   </div>
 <% end %>
-    
