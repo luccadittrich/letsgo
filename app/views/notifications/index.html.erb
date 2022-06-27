@@ -1,7 +1,9 @@
-<div class="courses-container">
-  <ul class="list-group">
+<ul class="list-group m-0">
   <% @notifications.each do |notification| %>
-    <li class="list-group-item"><%= "#{notification.created_at.strftime("%Y-%m-%d %H:%M")} #{notification.content}" %></li>
+    <li class="list-group-item ">
+      <%= image_tag url_for(notification.user.photo), class: "avatar-large" %>
+      <h5 ><%= notification.content %></h5>
+      <p><%= I18n.l(notification.created_at, format: :short) %></p>
+    </li>
   <%end%>
-  </ul>
-</div>
+</ul>
