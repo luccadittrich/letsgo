@@ -1,11 +1,10 @@
 <div class= "container">
-
   <div class ="devise-page">
     <main class="flex align-items-center justify-content-center mt-10">
       <section id="mobile" class="flex">
       </section>
       <div class="flex-log-in">
-        <img src="<%= ['https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80', 'https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80'].sample %>" class="photo-log-in">
+        <img id="hide" src="<%= ['https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80', 'https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80'].sample %>" class="photo-log-in">
         <section id="auth" class="flex direction-column">
           <div class="panel login flex direction-column">
             <h1 title="Lets Go" class="flex justify-content-center">
@@ -35,13 +34,11 @@
                   </div>
                 </div>
                 <%= f.button :submit, "Entrar", class: "button" %>
-            <div class="flex justify-content-center mt-2 hover-session">
-              <%= link_to "Não tem uma conta? Cadastre-se", new_user_registration_path, class: 'fdp' %>
+                <div class="flex justify-content-center mt-2 hover-session">
+                  <%= link_to "Não tem uma conta? Cadastre-se", new_user_registration_path, class: 'fdp' %>
+                </div>
+              <% end %>
             </div>
-            <% end %>
-          </div>
-
-
           </div>
         </section>
       </div>
