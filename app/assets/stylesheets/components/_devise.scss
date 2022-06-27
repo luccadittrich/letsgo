@@ -87,6 +87,7 @@
   .panel {
     background-color: white;
     border: 1px solid #dbdbdb;
+    width: fit-content;
   }
 
   #auth {
@@ -95,6 +96,7 @@
 
   #mobile {
     max-width: 454px;
+
   }
 
   #mobile img {
@@ -200,4 +202,10 @@
     margin-bottom: 15px;
   }
 
+}
+
+@media (max-width:629px) {
+  img#hide {
+    display: none;
+  }
 }
