@@ -8,15 +8,19 @@
       <%= 'Notificações' if @feed_header == 'notifications' %>
       <%#= @event.name.titleize if @feed_header == 'show' %>
       <% if @event && current_user == @event.user && @feed_header == 'show' %>
-        <%= @event.name.titleize%>
-        <%= link_to edit_event_path(@event) do%>
-          <i class="fas fa-edit edit-button"></i>
-        <%end%>
-        <%= link_to event_path(@event), method: :delete, data: {confirm: "Tem certeza sobre o cancelamento do evento '#{@event.name}'?"} do%>
-          <i class="fas fa-ban delete-button"></i>
-        <%end%>
+        <div class="d-flex justify-content-between">
+          <%= @event.name.titleize%>
+          <div>
+            <%= link_to edit_event_path(@event) do%>
+              <i class="fas fa-edit edit-button" data-bs-toggle="tootip" data-bs-replacement="top" title="Editar informações"></i>
+            <%end%>
+            <%= link_to event_path(@event), method: :delete, data: {confirm: "Tem certeza sobre o cancelamento do evento '#{@event.name}'?"} do%>
+              <i class="fas fa-ban delete-button" data-bs-toggle="tootip" data-bs-replacement="top" title="Cancelar evento"></i>
+            <%end%>
+          </div>
+        </div>
       <% elsif @feed_header == 'show' %>
-       <%= @event.name.titleize %>
+        <%= @event.name.titleize %>
       <%end%>
       <%= 'Perfil' if @feed_header == 'profile' %>
       <%= 'Editar perfil' if params[:action] == 'edit' && params[:controller] == 'devise/registrations' %>

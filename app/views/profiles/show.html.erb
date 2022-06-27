@@ -1,7 +1,7 @@
 <% if @user.banner.attached? %>
-  <%= cl_image_tag @user.banner.key, height: 200, width: 620, resize: :fit %>
+  <%= cl_image_tag @user.banner.key, height: 300, width: 620, crop: :fill, class: 'event-banner-show' %>
 <% else %>
-  <%= image_tag "banner-profile.png", height: 200, width: 620, resize: :fit %>
+  <%= image_tag "banner-profile.png", height: 300, width: 620, crop: :fill, class: 'event-banner-show' %>
 <% end %>
 <div class="profile-info-page">
   <%= cl_image_tag @user.photo.key, class: 'avatar-profile-img' %>
