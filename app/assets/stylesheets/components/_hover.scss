@@ -2,64 +2,79 @@
   position: relative;
   left: 0;
   z-index: 10;
-  border: 2px red solid;
+  border: 3px red solid;
+  transition: 0.5s;
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
+
   }
 }
 .image1 {
   position: relative;
   left: -20px ;
-  border: 2px yellow solid;
+  border: 3px orange solid;
   z-index: 9;
+  transition: 0.5s;
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
+
   }
 }
 .image2 {
   position: relative;
   left: -40px;
-  border: 2px green solid;
+  border: 3px yellow solid;
   z-index: 8;
+  transition: 0.5s;
+
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 }
 
 .image3 {
   position: relative;
   left: -60px;
-  border: 2px blue solid;
+  border: 3px green solid;
   z-index: 7;
+  transition: 0.5s;
+
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 }
 .image4 {
   position: relative;
   left: -80px;
-  border: 2px black solid;
+  border: 3px rgb(86, 86, 252) solid;
   z-index: 6;
+  transition: 0.5s;
+
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 }
 
 .image5{
   position: relative;
   left: -100px;
-  border: 2px orange solid;
+  border: 3px blue solid;
   z-index: 5;
+  transition: 0.5s;
   &:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
+
   }
 }
-.image6 {
-  position: relative;
-  left: -120px;
-  border: 2px purple solid;
-  z-index: 4;
-  &:hover{
-    transform: scale(1.05);
-  }
+
+
+.confirmados {
+
+  width: 100%;
+  color: white;
+}
+
+
+div span:not(:first-child) {
+  margin-left: -0.3em;
 }
