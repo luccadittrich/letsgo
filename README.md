@@ -19,7 +19,7 @@ https://letsgo-social2.herokuapp.com/
 
 Developers: 
 
-<img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" style="border-radius: 50%" height="auto" width=75>
+<img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" class="avatar avatar-user" height="auto" width=75>
 
 <img src="">
 <img src="">
