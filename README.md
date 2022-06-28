@@ -31,6 +31,6 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
   <a href="https://www.linkedin.com/in/gabriel-ferreira-324137ab/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFIfPom2RftUg/profile-framedphoto-shrink_400_400/0/1655988775390?e=1657040400&v=beta&t=3NZ6sciwC74yx5bQms2p0k2SpebhD3UHp6oaEObT0V4" width=75></a>
 </kbd>
 
-Rails -v 6.1.6
-Ruby -v 3.0.3
-Node -v 16.13.1
+<p>Rails -v 6.1.6</p>
+<p>Ruby -v 3.0.3</p>
+<p>Node -v 16.13.1</p>
