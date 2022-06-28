@@ -20,15 +20,15 @@ https://letsgo-social2.herokuapp.com/
 Developers: 
 
 <kbd>
-  <img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" class="avatar avatar-user" height="auto" width=75>
+  <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk"></a>
 </kbd>
 <kbd>
-  <img src="https://drive.google.com/drive/folders/1GGkjYmacmVAese48EdQDDrQYhK6FqHZF">
+  <a href="https://www.linkedin.com/in/luccadittrich/"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEhDYtCbUkdZw/profile-framedphoto-shrink_400_400/0/1656432262524?e=1657040400&v=beta&t=4thiGpXrmu2Yfx2sehFMl1nP2-xh_CsFmILBtYnvmCA"></a>
 </kbd>
 <kbd>
-<img src="">
+  <a href="https://www.linkedin.com/in/gessicahug/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQH9ib2fZU-LkA/profile-framedphoto-shrink_400_400/0/1653596383890?e=1657040400&v=beta&t=98M87XIU_nThxL5QZnRjuAKslkKuDN1GVv4RX_m9FPQ"></a>
 </kbd>
 <kbd>
-  <img src="">
+  <a href="https://www.linkedin.com/in/gabriel-ferreira-324137ab/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFIfPom2RftUg/profile-framedphoto-shrink_400_400/0/1655988775390?e=1657040400&v=beta&t=3NZ6sciwC74yx5bQms2p0k2SpebhD3UHp6oaEObT0V4"></a>
 </kbd>
 
