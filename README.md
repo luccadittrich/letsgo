@@ -18,9 +18,11 @@ https://letsgo-social2.herokuapp.com/
 </p>
 
 Developers: 
+
 <kbd>
   <img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" class="avatar avatar-user" height="auto" width=75>
+  <img src="https://drive.google.com/drive/folders/1GGkjYmacmVAese48EdQDDrQYhK6FqHZF">
+  <img src="">
+  <img src="">
 </kbd>
-<img src="">
-<img src="">
-<img src="">
+
