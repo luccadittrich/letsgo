@@ -1,5 +1,4 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-https://letsgo-social2.herokuapp.com/
 
 <a href="https://letsgo-social2.herokuapp.com/" target="_blank"> Link para o Lets's Go (atualizado)</a>
 
