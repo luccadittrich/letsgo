@@ -16,7 +16,7 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/heroku-colored.svg" width="36" height="36" alt="Heroku" /></a>
 </p>
 
-Developers: 
+### Developers: 
 
 <kbd>
   <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" width=75></a>
