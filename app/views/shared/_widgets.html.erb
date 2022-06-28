@@ -107,12 +107,12 @@
         <div class="confirmados d-flex">
           <% @check_ins.last(5).reverse_each do |ci| %>
             <%= link_to profile_path(ci.user) do %>
-              <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top", title: "#{ci.user.first_name.titleize}" %>
+              <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "#{ci.user.first_name.titleize}" %>
             <% end %>
             <% i += 1 %>
             <%= break if i == 5 %>
           <% end %>
-          <%= image_tag('dots.jpg', class: "avatar-large image5") if @check_ins.count > 4 %>
+          <%= image_tag('dots.jpg', class: "avatar-large image5", alt: "outros", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "outros" ) if @check_ins.count > 4 %>
         </div>
       <p>
         <% if @event.check_ins.count > 1 %>

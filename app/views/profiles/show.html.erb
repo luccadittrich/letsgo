@@ -15,6 +15,7 @@
   <% unless @user == current_user %>
     <% if @follows.present? %>
       <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "unfollow-button" %>
+
     <% else %>
       <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "follow-button" %>
     <% end %>
