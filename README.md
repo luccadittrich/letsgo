@@ -20,7 +20,7 @@ https://letsgo-social2.herokuapp.com/
 Developers: 
 
 <kbd>
-  <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk"></a>
+  <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" width=75></a>
 </kbd>
 <kbd>
   <a href="https://www.linkedin.com/in/luccadittrich/"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEhDYtCbUkdZw/profile-framedphoto-shrink_400_400/0/1656432262524?e=1657040400&v=beta&t=4thiGpXrmu2Yfx2sehFMl1nP2-xh_CsFmILBtYnvmCA"></a>
