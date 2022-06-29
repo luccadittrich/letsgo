@@ -1,8 +1,8 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-<a href="#" target="_blank"> <img src="https://raw.githubusercontent.com/lucca1998byu/letsgo/master/app/assets/images/logo.png" width=100></a>
+<a href="https://letsgo-social2.herokuapp.com/home" target="_blank"> <img src="https://raw.githubusercontent.com/lucca1998byu/letsgo/master/app/assets/images/logo.png" width=100></a>
 
-<a href="www.letsgo-social.com.br" target="_blank"> Link para o Lets's Go (alguns erros)</a>
+<a href="https://letsgo-social2.herokuapp.com/home" target="_blank"> Link para o Lets's Go</a>
 
 ### Built with: <p align="left">
 <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ruby-colored.svg" width="36" height="36" alt="Ruby" /></a>
