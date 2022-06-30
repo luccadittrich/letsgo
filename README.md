@@ -4,6 +4,10 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 <a href="https://letsgo-social.com.br" target="_blank"> Link para o Lets's Go</a>
 
+obs: é necessário criar uma conta para acessar os eventos. A página de eventos esta dando alguns problemas, você pode acessar um evento neste link: <a href="https://letsgo-social.com.br/events/8">Evento</a>
+
+ps: it's ncessary to create and account to access events
+
 ### Built with: <p align="left">
 <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ruby-colored.svg" width="36" height="36" alt="Ruby" /></a>
 <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"><img src="https://miro.medium.com/max/512/1*6vNUJnsKLM31sBb_D2kKMA.png" width="36" height="36" alt="Rails" /></a>
