@@ -1,10 +1,10 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-<a href="https://letsgo-social.com.br" target="_blank"> <img src="https://raw.githubusercontent.com/lucca1998byu/letsgo/master/app/assets/images/logo.png" width=100></a>
+<a href="https://letsgo-socialapp.herokuapp.com/" target="_blank"> <img src="https://raw.githubusercontent.com/lucca1998byu/letsgo/master/app/assets/images/logo.png" width=100></a>
 
-<a href="https://letsgo-social.com.br" target="_blank"> Link para o Lets's Go</a>
+<a href="https://letsgo-socialapp.herokuapp.com/" target="_blank"> Link para o Lets's Go</a>
 
-obs: é necessário criar uma conta para acessar os eventos. A página de eventos esta dando alguns problemas, você pode acessar um evento neste link: <a href="https://letsgo-social.com.br/events/8">Evento</a>
+obs: é necessário criar uma conta para acessar os eventos.
 
 ps: it's ncessary to create and account to access events
 
