@@ -1,19 +1,24 @@
 <div class="courses-container">
   <% @chatrooms.each do |chatroom|%>
     <%= link_to chatroom_path(chatroom) do %>
-      <div class="card-body", id="card-chat">
+      <div class="card-body align-items-center", id="card-chat">
         <div id="avatar-chat">
-          <%= cl_image_tag chatroom.followed.photo.key, class: "avatar-large", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
-        </div>
-        <div id="message-content">
-          <h3><%= chatroom.followed.username.titleize %></h3>
-          <% if chatroom.messages.last %>
-            <h4><%= chatroom.messages.last.content %></h4>
+          <% if current_user == chatroom.followed %>
+            <%= cl_image_tag chatroom.user.photo.key, class: "avatar-large", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
           <% else %>
-            <p><%= "Envie uma mensagem para #{chatroom.followed.username}" %></p>
+            <%= cl_image_tag chatroom.followed.photo.key, class: "avatar-large", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
           <% end %>
         </div>
-        
+        <div id="align-items-center">
+          <h5><%= chatroom.followed.username unless current_user == chatroom.followed %></h3>
+          <h5><%= chatroom.user.username unless current_user != chatroom.followed %></h3>
+          <% if chatroom.messages.last %>
+            <h6><%= chatroom.messages.last.content %></h4>
+          <% else %>
+            <p><%= "Envie uma mensagem para #{chatroom.followed.username}" unless current_user == chatroom.followed %></p>
+            <p><%= "Envie uma mensagem para #{chatroom.user.username}" unless current_user != chatroom.followed %></p>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <%end%>
