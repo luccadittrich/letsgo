@@ -2,14 +2,11 @@
   <div class="message-chat message-user-<%= message.user.id %>">
     <%= image_tag url_for(message.user.photo), class: "avatar-chat" %>
     <div class="d-flex gap-chat w-100 align-items-center">
-
       <small class="d-flex flex-column">
-        <strong><%= message.user.username %></strong>
+        <strong><%#= message.user.username %></strong>
         <i><%= I18n.l(message.created_at, format: :short) %></i>
-        <p><%= message.content  %></p>
+        <h5><%= message.content  %></h5>
       </small>
-
-
     </div>
   </div>
 </div>
