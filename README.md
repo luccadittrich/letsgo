@@ -23,16 +23,16 @@ ps: it's ncessary to create and account to access events
 ### Developers: 
 
 <kbd>
-  <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657036800&v=beta&t=ymV8x4yiB1QYWYfXTlo10V3OXTDjy6LidRi246QArbk" width=75></a>
+  <a href="https://www.linkedin.com/in/icaroleon/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQE3eNi6g8b9LA/profile-framedphoto-shrink_400_400/0/1654388318636?e=1657900800&v=beta&t=wE19-zVBm78m49G-_DumHdhcHP0l0xvhGpnDSS9biyg" width=75></a>
 </kbd>
 <kbd>
-  <a href="https://www.linkedin.com/in/luccadittrich/"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEhDYtCbUkdZw/profile-framedphoto-shrink_400_400/0/1656432262524?e=1657040400&v=beta&t=4thiGpXrmu2Yfx2sehFMl1nP2-xh_CsFmILBtYnvmCA" width=75></a>
+  <a href="https://www.linkedin.com/in/luccadittrich/"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEhDYtCbUkdZw/profile-framedphoto-shrink_400_400/0/1656432262524?e=1657900800&v=beta&t=FTWSkBrPUpzB6wOQ6SVWPnmu2g18Vt2MEa8LR63dvOU" width=75></a>
 </kbd>
 <kbd>
   <a href="https://www.linkedin.com/in/gessicahug/"><img src="https://media-exp1.licdn.com/dms/image/D4D35AQHrjpRmtbgzpw/profile-framedphoto-shrink_400_400/0/1656591339720?e=1657328400&v=beta&t=hlpusNichvhPK3Syrhyy5a5hE1nExPYDyV1DY4fLj_Q" width=75></a>
 </kbd>
 <kbd>
-  <a href="https://www.linkedin.com/in/gabriel-ferreira-324137ab/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFIfPom2RftUg/profile-framedphoto-shrink_400_400/0/1655988775390?e=1657040400&v=beta&t=3NZ6sciwC74yx5bQms2p0k2SpebhD3UHp6oaEObT0V4" width=75></a>
+  <a href="https://www.linkedin.com/in/gabriel-ferreira-324137ab/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFIfPom2RftUg/profile-framedphoto-shrink_400_400/0/1655988775390?e=1657900800&v=beta&t=8ilsq26FmjXQn7XGm3KWoiYVI8a9HgtWXIBDuhbjTGM" width=75></a>
 </kbd>
 
 ### Version:
