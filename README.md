@@ -29,7 +29,7 @@ ps: it's ncessary to create and account to access events
   <a href="https://www.linkedin.com/in/luccadittrich/"><img src="https://media-exp1.licdn.com/dms/image/D5635AQEhDYtCbUkdZw/profile-framedphoto-shrink_400_400/0/1656432262524?e=1657900800&v=beta&t=FTWSkBrPUpzB6wOQ6SVWPnmu2g18Vt2MEa8LR63dvOU" width=75></a>
 </kbd>
 <kbd>
-  <a href="https://www.linkedin.com/in/gessicahug/"><img src="https://media-exp1.licdn.com/dms/image/D4D35AQHrjpRmtbgzpw/profile-framedphoto-shrink_400_400/0/1656591339720?e=1657328400&v=beta&t=hlpusNichvhPK3Syrhyy5a5hE1nExPYDyV1DY4fLj_Q" width=75></a>
+  <a href="https://www.linkedin.com/in/gessicahug/"><img src="https://media-exp1.licdn.com/dms/image/D4D35AQHrjpRmtbgzpw/profile-framedphoto-shrink_400_400/0/1656591339720?e=1658167200&v=beta&t=7my9lLR_I6Jzf9Es6xJN8TnA5UD0s9L-lB8ugke2hGw" width=75></a>
 </kbd>
 <kbd>
   <a href="https://www.linkedin.com/in/gabriel-ferreira-324137ab/"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFIfPom2RftUg/profile-framedphoto-shrink_400_400/0/1655988775390?e=1657900800&v=beta&t=8ilsq26FmjXQn7XGm3KWoiYVI8a9HgtWXIBDuhbjTGM" width=75></a>
