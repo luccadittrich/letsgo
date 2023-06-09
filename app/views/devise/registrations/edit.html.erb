@@ -2,13 +2,23 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
+      <h6 class="mt-2">Nome:</h6>
+      <%= f.input :first_name, required: false, autofocus: true, label: false %>
+      <h6 class="mt-2">Sobrenome:</h6>
+      <%= f.input :last_name, required: false, autofocus: true, label: false %>
+      <h6 class="mt-2">Username:</h6>
+      <%= f.input :username, required: false, autofocus: true, label: false %>
       <h6 class="mt-2">Bio:</h6>
-       <%= f.input :bio, required: false, autofocus: true, label: false %>
+      <%= f.input :bio, required: false, autofocus: true, label: false %>
       <h6 class="mt-2">Email:</h6>
       <%= f.input :email, required: true, autofocus: false, label: false %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
+      <h6>Foto do perfil:</h6>
+      <%= f.input :photo, as: :file,  label: false %>
+      <h6>Banner do perfil:</h6>
+      <%= f.input :banner, as: :file,  label: false %>
       <h6>Nova senha:</h6>
       <%= f.input :password,
                 hint: "Deixe em branco caso não queira mudar",
@@ -23,15 +33,11 @@
                 hint: "Digite sua senha para confirmar as mudanças",
                 required: false, label: false,
                 input_html: { autocomplete: "current-password" } %>
-      <h6>Foto do perfil:</h6>
-      <%= f.input :photo, as: :file,  label: false %>
-      <h6>Banner do perfil:</h6>
-      <%= f.input :banner, as: :file,  label: false %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Atualizar", class: "publish-box-publish-button w-100 rounded-0" %>
     </div>
   <% end %>
-    <p><%= link_to "Voltar", :back, class: 'btn  btn-warning btn-back-edit' %>
+  <p><%= link_to "Voltar", :back, class: 'btn  btn-warning btn-back-edit' %>
     <%= link_to "Deletar conta", registration_path(resource_name), class: 'btn btn-danger btn-cancel-account', data: { confirm: "Tem certeza?" }, method: :delete %>
-</div>
+  </div>

@@ -13,7 +13,7 @@
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
         <div class="d-flex justify-content-between">
-          <p><%= ci.event.name.titleize %></p>
+          <p><%= link_to ci.event.name.titleize, event_path(ci.event) %></p>
           <%= link_to event_check_in_path(ci.event, ci), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
             <span class="material-icons"> close </span>
           <% end %>
@@ -43,7 +43,7 @@
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
         <div class="d-flex justify-content-between">
-          <p><%= ci.event.name.titleize %></p>
+          <p><%= link_to ci.event.name.titleize, event_path(ci.event) %></p>
           <%= link_to event_check_in_path(ci.event_id), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
             <span class="material-icons"> close </span>
           <% end %>
@@ -74,7 +74,7 @@
       <h2>Próximos Eventos</h2>
       <% @check_ins.reverse_each do |ci| %>
         <div class="d-flex justify-content-between">
-          <p><%= ci.event.name.titleize %></p>
+          <p><%= link_to ci.event.name.titleize, event_path(ci.event) %></p>
           <%= link_to event_check_in_path(ci.event_id, ci), method: :delete, data: {confirm: "Cancelar presença no #{ci.event.name}?"}, class: 'text-decoration-none text-dark' do %>
             <span class="material-icons"> close </span>
           <% end %>
@@ -104,16 +104,16 @@
       </div>
       <h5 id="details">Detalhes</h5>
       <% i = 0 %>
-        <div class="confirmados d-flex">
-          <% @check_ins.last(5).reverse_each do |ci| %>
-            <%= link_to profile_path(ci.user) do %>
-              <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "#{ci.user.first_name.titleize}" %>
-            <% end %>
-            <% i += 1 %>
-            <%= break if i == 5 %>
+      <div class="confirmados d-flex">
+        <% @check_ins.last(5).reverse_each do |ci| %>
+          <%= link_to profile_path(ci.user) do %>
+            <%= cl_image_tag ci.user.photo.key, class: "avatar-large image#{i}", alt: "#{ci.user.first_name.titleize}", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "#{ci.user.first_name.titleize}" %>
           <% end %>
-          <%= image_tag('dots.jpg', class: "avatar-large image5", alt: "outros", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "outros" ) if @check_ins.count > 4 %>
-        </div>
+          <% i += 1 %>
+          <%= break if i == 5 %>
+        <% end %>
+        <%= image_tag('dots.jpg', class: "avatar-large image5", alt: "outros", "data-bs-toggle": "tooltip", "data-bs-placement": "top", title: "outros" ) if @check_ins.count > 4 %>
+      </div>
       <p>
         <% if @event.check_ins.count > 1 %>
           <% x = 0 %>
