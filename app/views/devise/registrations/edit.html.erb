@@ -2,8 +2,10 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
+      <h6 class="mt-2">Bio:</h6>
+       <%= f.input :bio, required: false, autofocus: true, label: false %>
       <h6 class="mt-2">Email:</h6>
-      <%= f.input :email, required: true, autofocus: true, label: false %>
+      <%= f.input :email, required: true, autofocus: false, label: false %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
@@ -19,7 +21,7 @@
       <h6>Senha atual:</h6>
       <%= f.input :current_password, label: false,
                 hint: "Digite sua senha para confirmar as mudanças",
-                required: true, label: false,
+                required: false, label: false,
                 input_html: { autocomplete: "current-password" } %>
       <h6>Foto do perfil:</h6>
       <%= f.input :photo, as: :file,  label: false %>

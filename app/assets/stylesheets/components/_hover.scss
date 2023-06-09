@@ -6,7 +6,7 @@
   transition: 0.5s;
   &:hover{
     transform: scale(1.1);
-
+    z-index: 1000;
   }
 }
 .image1 {
@@ -17,7 +17,7 @@
   transition: 0.5s;
   &:hover{
     transform: scale(1.1);
-
+    z-index: 1000;
   }
 }
 .image2 {
@@ -29,6 +29,7 @@
 
   &:hover{
     transform: scale(1.1);
+    z-index: 1000;
   }
 }
 
@@ -41,6 +42,7 @@
 
   &:hover{
     transform: scale(1.1);
+    z-index: 1000;
   }
 }
 .image4 {
@@ -52,18 +54,18 @@
 
   &:hover{
     transform: scale(1.1);
+    z-index: 1000;
   }
 }
 
 .image5{
   position: relative;
   left: -100px;
-  border: 3px blue solid;
+  border: 3px purple solid;
   z-index: 5;
   transition: 0.5s;
   &:hover{
     transform: scale(1.1);
-
   }
 }
 
