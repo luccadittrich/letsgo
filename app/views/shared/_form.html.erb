@@ -15,5 +15,5 @@
     <%= f.label "Evento privado", class: 'event-form-label' %>
     <%= f.check_box :private, label: false %>
   </div>
-  <%= f.button :submit, root_path, class: 'btn btn-create-event w-100', value: "ENVIAR" %>
+  <%= f.button :submit, root_path, class: 'btn btn-create-event w-100', value: "Enviar", data: { disable_with: "Enviando..." } %>
 <% end %>

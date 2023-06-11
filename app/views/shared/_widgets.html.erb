@@ -119,7 +119,7 @@
           <% x = 0 %>
           <% y = false  %>
           <% @check_ins.last(3).reverse_each do |c| %>
-            <%= c.user.first_name.titleize %><%= @check_ins.count == 2 && x < 1 ? " e" : ","  %><%= ' e' if @check_ins.count == 2 && x == 1 && y %>
+            <%= c.user.first_name.rstrip %><%= @check_ins.count == 2 && x < 1 ? " e" : ","  %><%= ' e' if @check_ins.count == 2 && x == 1 && y %>
             <% x += 1 %>
           <% end %>
           <%= "confirmaram presença" if @check_ins.count < 3 && @check_ins.count > 0 %>
@@ -132,7 +132,7 @@
         <% end %>
         <p><i class="fas fa-map-marker-alt event-icons"></i>  <%= @event.address.titleize %></p>
         <p><i class="fas fa-calendar-day event-icons"></i>  <%= I18n.l(@event.date, format: :longa) %></p>
-        <p><i class="fab fa-font-awesome-flag event-icons"> </i> Evento criado por <b>@<%= @event.user.username%></b></p>
+        <p><i class="fab fa-font-awesome-flag event-icons"></i>Evento criado por <b>@<%= link_to "#{@event.user.username}", profile_path(@event.user) %></b></p>
         <p><b> Descrição: </b><%= @event.description %></p>
       </p>
       <div class="">
