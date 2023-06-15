@@ -5,8 +5,8 @@
       <%= link_to profile_path(follower), class: "" do %>
         <%= image_tag url_for(follower.photo), class: "avatar-large" %>
       <% end %>
-      <h5 ><%= notification.content %></h5>
+      <h5 class="notification-text"><%= notification.content %></h5>
       <p class="data-notification"><%= I18n.l(notification.created_at, format: :short) %></p>
     </li>
-  <%end%>
+  <% end %>
 </ul>

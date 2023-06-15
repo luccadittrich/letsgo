@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def show
     @post = Post.find(params[:id])
     @posts = @post.posts.order(created_at: :desc)
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
       if @post.save
         if @post.post.present?
           redirect_to post_path(@post.post)
-        else   
+        else
           redirect_to event_path(@event["id"])
         end
       else
@@ -39,8 +38,7 @@ class PostsController < ApplicationController
     end
   end
 
-
-    private
+  private
 
   def post_params
     params.require(:post).permit(:content, :event_id, :user_id, :post_id, photos: [])

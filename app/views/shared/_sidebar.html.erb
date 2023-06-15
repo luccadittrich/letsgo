@@ -51,12 +51,11 @@
           <p class="username">@<%= current_user.username %></p>
         </div>
       </div>
-
     </div>
     <ul class="dropdown-menu dropdown-menu-end position-absolute nav-item" aria-labelledby="dropdownMenuButton1">
       <%= link_to "Meus eventos", "#", class: "dropdown-item" %>
       <%= link_to "Meus check-ins", check_ins_path, class: "dropdown-item" %>
-        <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item flex-grow-1"%>
+      <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item flex-grow-1"%>
       <div class="d-flex">
         <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item flex-grow-1 border-top pb-0", style: "--bs-border-opacity: .5" do %>
           Log out<i class="fa-solid fa-right-from-bracket icons-dropdown"></i>

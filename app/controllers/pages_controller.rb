@@ -9,10 +9,8 @@ class PagesController < ApplicationController
     @feed_header = 'home'
     @events = Event.all
     @check_in_event = current_user.check_ins.map do |c|
-                        c.event
-                      end
-
-
+      c.event
+    end
 
     @markers = @events.geocoded.map do |event|
       {

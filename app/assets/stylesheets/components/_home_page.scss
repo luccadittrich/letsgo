@@ -258,8 +258,8 @@ body {
   color: #6e767d;
   font-size: small;
   margin-bottom: 0px;
-  position: relative;
-  top: 300px;
+  //position: relative;
+  //top: 300px;
 }
 
 .event-form-label {
@@ -311,7 +311,7 @@ body {
 }
 
 .post-badge {
-  font-size: 14px !important;
+  font-size: 10px !important;
   color: var(--letsgo-color);
   margin-right: 5px;
 }

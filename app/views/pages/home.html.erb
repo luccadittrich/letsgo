@@ -14,14 +14,14 @@
     <%= f.submit 'POSTAR', class: 'publish-box-publish-button-post-home' %>
   <% end %>
 </div>
-<% @posts.each_with_index do |post, index| %>
+<% @posts.reverse_each.with_index do |post, index| %>
   <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
-    <%= link_to profile_path(post.user) do%>
+    <%= link_to profile_path(post.user) do %>
       <div class="post-avatar">
         <%= cl_image_tag User.where(id: post.user_id).first.photo.key %>
       </div>
     <%end%>
-    <%= link_to post_path(post) do%>
+    <%= link_to post_path(post) do %>
       <div class="post-body">
         <div class="post-header">
           <div class="post-header-text">
@@ -30,7 +30,7 @@
               <span class="post-header-special">
                 <span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
                 <i class="fas fa-chevron-right feed-arrow"></i><i class="fas fa-chevron-right feed-arrow"></i>
-                <span class = "event-name"> <%= post.event.name.downcase %> </span>
+                <span class = "event-name"> <%= post.event.name %> </span>
               </span>
             </h3>
           </div>
@@ -59,9 +59,9 @@
             <%else%>
               <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
             <% end %>
-            <p class = "published-event-with-photo">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
+            <p class = "published-event-with-photo"><%= I18n.l(post.created_at, format: :long) %></p>
           <% else %>
-            <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
+            <p class = "published-event"><%= I18n.l(post.created_at, format: :long) %></p>
           <% end %>
         </div>
       </div>

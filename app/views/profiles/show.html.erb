@@ -15,13 +15,11 @@
   <% unless @user == current_user %>
     <% if @follows.present? %>
       <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "unfollow-button" %>
-
     <% else %>
       <%= link_to "Seguir", follows_path(user_id: @user), method: :post, class: "follow-button" %>
     <% end %>
   <% end %>
 </div>
-
 <% @posts.each_with_index do |post, index| %>
   <div class="<%= index.even? ? 'post-even' : 'post-odd' %>">
     <div class="post-avatar">
@@ -32,12 +30,11 @@
         <div class="post-header-text">
           <h3>
             <%= User.where(id: post.user_id).first.first_name %>
-            <span class="post-header-special"
-              ><span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
+            <span class="post-header-special">
+              <span class="material-icons post-badge"> verified </span>@<%= User.where(id: post.user_id).first.username %>
               <i class="fas fa-chevron-right feed-arrow"></i><i class="fas fa-chevron-right feed-arrow"></i>
-              <span class = "event-name"> <%= post.event.name.downcase %> </span> </span
-            >
-
+              <span class = "event-name"> <%= post.event.name.downcase %> </span>
+            </span>
           </h3>
         </div>
         <div class="post-header-description">
@@ -61,13 +58,11 @@
                   </button>
                 </div>
               </div>
-            <%else%>
-                <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
+            <% else %>
+              <%= cl_image_tag post.photos.first.key, class: "carousel-inner carousel-item active" %>
             <% end %>
           <% end %>
-
-          <p class = "published-event">publicado em <%= I18n.l(post.created_at, format: :long) %>, às <%= post.created_at.strftime("%H:%M").downcase %>.</p>
-
+          <p class = "published-event"><%= I18n.l(post.created_at, format: :long) %></p>
         </div>
       </div>
     </div>
