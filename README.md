@@ -6,8 +6,6 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 obs: é necessário criar uma conta para acessar os eventos.
 
-ps: it's necessary to create an account to access events
-
 ### Built with: <p align="left">
 <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ruby-colored.svg" width="36" height="36" alt="Ruby" /></a>
 <a href="https://rubyonrails.org" target="_blank" rel="noreferrer"><img src="https://miro.medium.com/max/512/1*6vNUJnsKLM31sBb_D2kKMA.png" width="36" height="36" alt="Rails" /></a>
@@ -41,3 +39,6 @@ ps: it's necessary to create an account to access events
 <p>Ruby -v 3.0.3</p>
 <p>JavaScript -v 16.13.1</p>
 <p>Cloudinary</p>
+
+Para rodar esse repositório, é necessário ter as chave de api no arquivo .env dos serviços Cloudinary e Mapbox.
+
