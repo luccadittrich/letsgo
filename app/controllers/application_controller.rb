@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
+  before_action :notifications
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
@@ -12,6 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource_or_scope)
-     home_path
+    home_path
+  end
+
+  def notifications
+    @notifications = current_user.notifications
+    @chatrooms = Chatroom.where(user: current_user).or(Chatroom.where(followed: current_user)).to_a
   end
 end

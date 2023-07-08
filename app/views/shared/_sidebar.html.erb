@@ -15,10 +15,12 @@
     </div>
   <% end %>
   <%= link_to notifications_path, class: 'text-decoration-none text-dark' do %>
-    <div class="sidebar-option">
+    <div class="sidebar-option position-relative">
       <span class="material-icons"> notifications_none </span>
       <h2>Notificações</h2>
-      <span class="badge"><%= @notifications.count if @notifications %></span>
+      <span class="badge position-absolute not-pos">
+        <%= @notifications.count if @notifications %>
+      </span>
     </div>
   <%end%>
   <%= link_to chatrooms_path, class: 'text-decoration-none text-dark' do %>
