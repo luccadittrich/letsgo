@@ -102,3 +102,15 @@
   left: 415px;
   text-decoration: none;
 }
+
+.message-button {
+  background-color: var(--letsgo-color);
+  border: 10px solid var(--letsgo-color);
+  border-radius: 50%;
+  border-right-width: 6px;
+  color: white !important;
+  position: relative;
+  bottom: 396px;
+  left: 400px;
+  text-decoration: none;
+}

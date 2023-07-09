@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @follows = Follow.find_by(user_id: current_user.id, followed_id: params[:id])
     @events = Event.all
+    @chatroom = Chatroom.find_by(user_id: current_user.id, followed_id: @user.id)
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,

@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-
-  before_action :notifications
-
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :notifications
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -18,7 +16,9 @@ class ApplicationController < ActionController::Base
   end
 
   def notifications
-    @notifications = current_user.notifications
-    @chatrooms = Chatroom.where(user: current_user).or(Chatroom.where(followed: current_user)).to_a
+    if current_user
+      @notifications = current_user.notifications
+      @chatrooms = Chatroom.where(user: current_user).or(Chatroom.where(followed: current_user)).to_a
+    end
   end
 end
