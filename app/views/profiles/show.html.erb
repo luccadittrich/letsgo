@@ -12,10 +12,13 @@
   <p class="profile-following-text">Seguindo</p>
   <p class="profile-followers"><%= @user.followers.count %></p>
   <p class="profile-followers-text">Seguidores</p>
+  <%= link_to "Editar perfil", edit_user_registration_path, class: "follow-button" if @user == current_user %>
   <% unless @user == current_user %>
     <% if @follows.present? %>
-      <%= link_to chatroom_path(@chatroom.id), class: "message-button" do %>
-        <i class="fas fa-comment-alt"></i>
+      <% if @following %>
+        <%= link_to chatroom_path(@chatroom.id), class: "message-button" do %>
+          <i class="fas fa-comment-alt"></i>
+        <% end %>
       <% end %>
       <%= link_to "Deixar de seguir", follow_path(user_id: @user), method: :delete, class: "unfollow-button" %>
     <% else %>

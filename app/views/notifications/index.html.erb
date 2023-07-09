@@ -1,5 +1,5 @@
 <ul class="list-group m-0">
-  <% @notifications.each do |notification| %>
+  <% @notifications.reverse_each do |notification| %>
     <li class="list-group-item ">
       <% follower = User.find(notification.follower_id) %>
       <%= link_to profile_path(follower), class: "" do %>

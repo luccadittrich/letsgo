@@ -1,16 +1,18 @@
 <div class="container chatroom justify-content-center"
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <div class="d-flex align-items-center">
-    <% if current_user == @chatroom.followed %>
-      <%= cl_image_tag @chatroom.user.photo.key, class: "avatar m-3", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
-    <% else %>
-      <%= cl_image_tag @chatroom.followed.photo.key, class: "avatar m-3", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
-    <% end %>
-    <h2><%= @chatroom.followed.username unless current_user == @chatroom.followed %>
-      <%= @chatroom.user.username unless current_user != @chatroom.followed %>
-    </h2>
-  </div>
+  <%= link_to profile_path(@chatroom.user), class: "profile-link" do %>
+    <div class="d-flex align-items-center">
+      <% if current_user == @chatroom.followed %>
+        <%= cl_image_tag @chatroom.user.photo.key, class: "avatar m-3", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
+      <% else %>
+        <%= cl_image_tag @chatroom.followed.photo.key, class: "avatar m-3", "data-bs-toggle" => "tooltip", "data-bs-placement" =>"top" %>
+      <% end %>
+      <h2><%= @chatroom.followed.username unless current_user == @chatroom.followed %>
+        <%= @chatroom.user.username unless current_user != @chatroom.followed %>
+      </h2>
+    </div>
+  <% end %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>

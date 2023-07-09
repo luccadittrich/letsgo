@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
     @follow = Follow.new(user: current_user, followed_id: params[:user_id])
     @follower = @follow.followed_id
     @follow.save
-    Notification.create(user: User.find(params[:user_id]), content: "#{current_user.username} seguiu você.", follower_id: current_user.id)
+    Notification.create(user_id: params[:user_id], content: "#{current_user.username} seguiu você.", follower_id: current_user.id, viewed: false)
     redirect_to profile_path(params[:user_id])
   end
 

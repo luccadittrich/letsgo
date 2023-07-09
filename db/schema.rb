@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_09_154352) do
+ActiveRecord::Schema.define(version: 2023_07_09_160111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2023_06_09_154352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "follower_id", null: false
+    t.boolean "viewed", default: false
     t.index ["follower_id"], name: "index_notifications_on_follower_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 2023_06_09_154352) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "content"
     t.bigint "post_id"
+    t.string "timestamped_photo_public_id"
     t.index ["event_id"], name: "index_posts_on_event_id"
     t.index ["post_id"], name: "index_posts_on_post_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
